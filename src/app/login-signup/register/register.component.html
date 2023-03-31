@@ -1,1 +1,15 @@
-<p>register works!</p>
+<form [formGroup]="registrationForm">
+    <h3>Register Here</h3><br>
+
+    <label for="username">Email</label><br>
+    <input type="text" placeholder="Email" id="username" formControlName="username"><br>
+
+    <label for="password">Password</label><br>
+    <input type="password" placeholder="Password" id="password" formControlName="password"><br>
+
+    <label for="password">Confirm Password</label><br>
+    <input type="password" placeholder="Confirm Password" id="confirmPassword" formControlName="confirmPassword"><br>
+
+    <button  class="btn" (click)="onRegister()">Register</button><br>
+    
+</form>
