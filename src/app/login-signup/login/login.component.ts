@@ -4,6 +4,11 @@ import { FormBuilder, FormGroup, Validators , FormControl} from '@angular/forms'
 import { ActivatedRoute,Router } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
+// an interface that contains the properties of username and password.
+interface User {
+  username: string;
+  password: string;
+}
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -11,14 +16,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class LoginComponent implements OnInit{
   loginForm!: FormGroup;
-  signupUsers:any[] =[];
+  signupUsers: User[] =[];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) {
+    this.signupUsers = [];
+   }
 
-  ngOnInit() {
+  ngOnInit():void {
     const localData = localStorage.getItem('signupUsers');
     if(localData != null) {
-      this.signupUsers=JSON.parse(localData)
+      this.signupUsers=JSON.parse(localData);
     }
     this.loginForm = new FormGroup({
       username: new FormControl('', Validators.required),
@@ -26,37 +33,18 @@ export class LoginComponent implements OnInit{
     });
   }
 
-  onLogin() {
-    const username = this.loginForm.get('username')?.value;
-    const password = this.loginForm.get('password')?.value;
-    const isUserExist = this.signupUsers.find(m => m.username == username && m.password == password);
-    if(isUserExist != undefined) {
-      alert('user logged in successfully')
+  onLogin(): void {
+    const username:string = this.loginForm.get('username')?.value;
+    const password:string = this.loginForm.get('password')?.value;
+    const isUserExist = this.signupUsers.find(m => m.username === username && m.password === password);
+    if(isUserExist !== undefined) {
+      alert('user logged in successfully');
     } else{
-      alert('user not found please Register')
+      alert('user not found please Register');
     }
   }
-
-  navigateToRegister() {
+  //navigate to register page
+  navigateToRegister():void {
     this.router.navigate(['login-signup/register']);
   }
-    
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-
-

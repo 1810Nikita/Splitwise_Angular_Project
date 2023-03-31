@@ -1,15 +1,30 @@
-<form [formGroup]="registrationForm">
-    <h3>Register Here</h3><br>
-
-    <label for="username">Email</label><br>
-    <input type="text" placeholder="Email" id="username" formControlName="username"><br>
-
-    <label for="password">Password</label><br>
-    <input type="password" placeholder="Password" id="password" formControlName="password"><br>
-
-    <label for="password">Confirm Password</label><br>
-    <input type="password" placeholder="Confirm Password" id="confirmPassword" formControlName="confirmPassword"><br>
-
-    <button  class="btn" (click)="onRegister()">Register</button><br>
-    
-</form>
+<div class="container">
+    <!--Registration form-->
+    <form [formGroup]="registrationForm">
+        <h3>Register Here</h3><br>
+        <div class="input-fields">
+            <!--Email-->
+            <div>
+                <label for="username">Email</label><br>
+                <input type="text" placeholder="Email" id="username" formControlName="username"><br>
+            </div>
+            <!--Name-->
+            <div>
+                <label for="name">Name</label><br>
+                <input type="name" placeholder="Name" id="name" formControlName="name"><br>
+            </div>
+            <!--Password-->
+            <div>
+                <label for="password">Password</label><br>
+                <input type="password" placeholder="Password" id="password" formControlName="password"><br>
+            </div>
+            <!--Confirm Password-->
+            <div>
+                <label for="password">Confirm Password</label><br>
+                <input type="password" placeholder="Confirm Password" id="confirmPassword" formControlName="confirmPassword"><br>
+            </div>
+        </div>
+        <!--Register button-->
+        <button type="button" class="btn" (click)="onRegister()">Register</button><br>    
+    </form>   
+</div>

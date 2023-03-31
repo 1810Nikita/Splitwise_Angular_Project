@@ -1,22 +1,22 @@
-
-    <div id="Login" class="background">
-
-        <form [formGroup]="loginForm">
-            <h3>Login Here</h3>
-        
-            <label for="username">Email</label><br>
-            <input type="text" placeholder="Email " id="username" formControlName="username"><br>
-        
-            <label for="password">Password</label><br>
-            <input type="password" placeholder="Password" id="password" formControlName="password"><br>
-        
-            <button class="btn" (click)="onLogin()">Log In</button><br>
-        
-            <button class="btn" (click)="navigateToRegister()">Register</button>
-        
-        
-            
-        </form>
-        
-        
-        </div>
+<!--login component-->
+<div id="Login" class="container">
+    <!--login form-->
+    <form [formGroup]="loginForm">
+        <h3>Login Here</h3>
+        <div class="input-fields">
+            <!--Add email-->
+            <div>
+                <label for="username">Email</label><br>
+                <input type="text" placeholder="Email " id="username" formControlName="username"><br>
+            </div>
+            <!--Add password-->
+            <div>
+                <label for="password">Password</label><br>
+                <input type="password" placeholder="Password" id="password" formControlName="password"><br>
+            </div>
+        </div><br><br>
+        <!--Buttons for login and navigation to registration page-->
+        <button type='button' class="btn" (click)="onLogin()">Log In</button><br><br>
+        <button type='button' class="btn" (click)="navigateToRegister()">Register</button>
+    </form>
+</div>
