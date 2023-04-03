@@ -1,1 +1,29 @@
-<p>add-group works!</p>
+<!--Group page-->
+<p>START A NEW GROUP</p>
+<div>
+    <form action="">
+        <div class="group-name">
+            <h1>My group shall be called....</h1>
+            <input type="text" placeholder="Enter Group Name">
+        </div>
+        <div>
+            <h3>ADD GROUP MEMBER</h3>
+            <div formArrayName="groupMember">
+                <div class="member-field">
+                    <div>
+                        <input type="text" formControlName="name" placeholder="Name">
+                    </div>
+                    
+                    <div>
+                        <input type="email" formControlName="email" placeholder="Email">
+                    </div>
+                   
+                    <button type="button" class="remove"><i class="fa fa-close"></i></button>
+                  </div>
+                  <!-- move the Add Group Member button to the end of the loop -->
+                  <button type="button">Add Group Member</button>
+            </div>
+        </div>
+    </form>
+</div>
+

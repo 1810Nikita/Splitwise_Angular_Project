@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit{
 
   ngOnInit():void {
     const localData = localStorage.getItem('signupUsers');
-    if(localData != null) {
+    if(localData !== null) {
       this.signupUsers=JSON.parse(localData);
     }
     this.loginForm = new FormGroup({
