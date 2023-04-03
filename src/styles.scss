@@ -6,18 +6,21 @@
 @import 'app/styles/components/button.scss';
 @import 'app/styles/layout/header.scss';
 
-html, body { height: 100%; }
+html, 
+body { height: 100%; 
+}
+
 body { margin: 0;
     background-color: white;
 }
 
 //h1 styling
-h1{
+h1 {
     color: rgb(113, 13, 207);
 }
 
 //form styling
-form{
+form {
     height: 600px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
@@ -38,14 +41,14 @@ form{
 }
 
 //lable styling
-label{
+label {
     display: block;
     font-size: 20px;
     font-weight: 500;
 }
 
 //input styling
-input{
+input {
     display: block;
     height: 30px;
     width: 100%;
@@ -58,26 +61,41 @@ input{
 }
 
 //place holder styling
-::placeholder{
+::placeholder {
     color: rgb(201, 165, 234);
 }
 
 //login class styling
-.login{
+.login {
     max-width: 200px;
     margin-left: 20px;
     text-align: center;
 }
 
 //h1 styling
-h1{
+h1 {
     text-align: center;
     margin-top: 10px ;
 }
 
 //welcome page styling
-.wlcome-page{
+.welcome-page {
     text-align: center;
+}
+
+//email div
+.email {
+    margin-top: 15px ;
+    margin-bottom: 15px;
+}
+//password div
+.password {
+    margin-top: 15px ;
+    margin-bottom: 15px;
+}
+//confirm-password div
+.confirm-password { 
+    margin-bottom: 15px;
 }
 
 

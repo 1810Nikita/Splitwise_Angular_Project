@@ -12,7 +12,7 @@ export class AppComponent {
   showLoginButton: boolean;
   constructor(private router: Router) {
     // Initialize showLoginButton property to true
-    this.showLoginButton=true;
+    this.showLoginButton = true;
     this.router.events.subscribe((val) => {
       if (this.router.url === '/') {
         this.showLoginButton = true;

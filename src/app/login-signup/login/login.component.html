@@ -5,18 +5,18 @@
         <h3>Login Here</h3>
         <div class="input-fields">
             <!--Add email-->
-            <div>
-                <label for="username">Email</label><br>
-                <input type="text" placeholder="Email " id="username" formControlName="username"><br>
-            </div>
+            <div class="email">
+                <label for="username">Email</label>
+                <input type="text" placeholder="Email " id="username" formControlName="username">
+           </div>
             <!--Add password-->
-            <div>
-                <label for="password">Password</label><br>
-                <input type="password" placeholder="Password" id="password" formControlName="password"><br>
+            <div class="password">
+                <label for="password">Password</label>
+                <input type="password" placeholder="Password" id="password" formControlName="password">
             </div>
-        </div><br><br>
+        </div>
         <!--Buttons for login and navigation to registration page-->
-        <button type='button' class="btn" (click)="onLogin()">Log In</button><br><br>
+        <button type='button' class="btn" (click)="onLogin()">Log In</button>
         <button type='button' class="btn" (click)="navigateToRegister()">Register</button>
     </form>
 </div>

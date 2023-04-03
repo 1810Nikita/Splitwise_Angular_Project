@@ -16,7 +16,7 @@ interface User {
 })
 export class LoginComponent implements OnInit{
   loginForm!: FormGroup;
-  signupUsers: User[] =[];
+  signupUsers: User[];
 
   constructor(private router: Router) {
     this.signupUsers = [];
@@ -33,7 +33,13 @@ export class LoginComponent implements OnInit{
     });
   }
 
+  /**
+   * This function is called when the user logs in.
+   * It performs the necessary actions to authenticate the user
+   * and redirect them to the appropriate page.
+  */
   onLogin(): void {
+    // code to authenticate the user
     const username:string = this.loginForm.get('username')?.value;
     const password:string = this.loginForm.get('password')?.value;
     const isUserExist = this.signupUsers.find(m => m.username === username && m.password === password);
@@ -43,8 +49,13 @@ export class LoginComponent implements OnInit{
       alert('user not found please Register');
     }
   }
-  //navigate to register page
-  navigateToRegister():void {
+  
+  /**
+    * Navigates to the registration page.
+    * This function uses the Angular Router service to navigate to the
+    * 'login-signup/register' route, which displays the registration form.
+  */
+  navigateToRegister(): void {
     this.router.navigate(['login-signup/register']);
   }
 }

@@ -5,9 +5,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 // an interface that contains the properties of username ,name, confirm password and password.
 interface User {
   username: string,
-  name:string,
-  password:string,
-  confirmPassword:string
+  name: string,
+  password: string,
+  confirmPassword: string
 }
 
 @Component({
@@ -18,7 +18,7 @@ interface User {
 
 export class RegisterComponent implements OnInit{
   registrationForm!: FormGroup;
-  signupUsers:User[] =[];
+  signupUsers:User[];
   signupObj:User ={
     username: '',
     name:'',
@@ -29,9 +29,13 @@ export class RegisterComponent implements OnInit{
   constructor (){
     this.signupUsers =[];
    }
-
-  //OnInit used for binding
-  ngOnInit():void {
+  
+  /**
+    * Initializes the component with an empty registration form.
+    * This function is automatically called by Angular when the component is created.
+    * The form controls are defined using the Reactive Forms API.
+  */
+  ngOnInit(): void {
     this.registrationForm = new FormGroup({
       username: new FormControl(''),
       name: new FormControl(''),
@@ -39,8 +43,14 @@ export class RegisterComponent implements OnInit{
       confirmPassword: new FormControl('')
     });
   }
-  //onRegister function of Register button
-  onRegister():void {
+  /**
+   * Handles the 'Register' button click event.
+   * Reads the input values from the registration form and creates a new user object.
+   * The user object is added to an array and stored in local storage.
+   * Finally, a success message is displayed in an alert box.
+   */
+  onRegister(): void {
+    // Read input values from the registration form
     this.signupObj = {
       username: this.registrationForm.value.username,
       name: this.registrationForm.value.name,
@@ -48,9 +58,11 @@ export class RegisterComponent implements OnInit{
       confirmPassword: this.registrationForm.value.confirmPassword
     };
 
-    //push the array data to local storage
+    // Add the new user object to the array of registered users and store it in local storage.
     this.signupUsers.push(this.signupObj);
     localStorage.setItem('signupUsers',JSON.stringify(this.signupUsers));
+
+    // Reset the form and display a success message
     this.signupObj = {
       username: '',
       name: '',
