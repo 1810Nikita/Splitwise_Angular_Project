@@ -1,29 +1,55 @@
-<!--Group page-->
-<p>START A NEW GROUP</p>
-<div>
-    <form action="">
-        <div class="group-name">
-            <h1>My group shall be called....</h1>
-            <input type="text" placeholder="Enter Group Name">
-        </div>
-        <div>
-            <h3>ADD GROUP MEMBER</h3>
-            <div formArrayName="groupMember">
-                <div class="member-field">
-                    <div>
-                        <input type="text" formControlName="name" placeholder="Name">
-                    </div>
-                    
-                    <div>
-                        <input type="email" formControlName="email" placeholder="Email">
-                    </div>
-                   
-                    <button type="button" class="remove"><i class="fa fa-close"></i></button>
-                  </div>
-                  <!-- move the Add Group Member button to the end of the loop -->
-                  <button type="button">Add Group Member</button>
-            </div>
-        </div>
-    </form>
-</div>
+<!--Heading-->
+<p class="text-center mt-5">START A NEW GROUP</p>
 
+<!-- This container holds the form that allows users to create a new group -->
+<div class="container">
+  <!-- This form group contains the group name and group members form array -->
+  <form [formGroup]="groupForm" (ngSubmit)="saveGroup()">
+
+    <!-- This section allows users to enter the group name -->
+    <div class="group-name p-2">
+      <h1>My group shall be called....</h1>
+      <input type="text" class="p-3" formControlName="groupName" placeholder="Enter Group Name" required>
+    </div>
+
+    
+    <!-- This section only becomes visible when a group name has been entered -->
+    <div *ngIf="showGroupMembersForm">
+        <h2 class="mb-2">ADD GROUP MEMBER</h2>
+
+        <!-- This form array holds the group member form groups -->
+        <div formArrayName="groupMembers">
+
+          <!-- This section shows the group member form groups -->
+          <div class="row" *ngFor="let member of groupMembers.controls; let i = index" [formGroupName]="i">
+
+            <!--Name-->
+            <div class="col-sm-5">
+              <input type="text" formControlName="name" placeholder="Name" required class="mb-2">
+            </div>
+
+            <!--Email-->
+            <div class="col-sm-5">
+              <input type="email" formControlName="email" placeholder="Email" required>
+            </div>
+
+            <!--This button allows user to delete the group members-->
+            <button type="button" class="col-sm-2" (click)="removeGroupMember(i)"><i class="fa fa-close"></i></button>
+          </div>
+
+          <!-- This button allows users to add more group members -->
+          <button type="button" (click)="addGroupMember()">Add +</button>
+        </div>
+
+        <!--Group type-->
+        <div>
+          <h4>GROUP TYPE</h4>
+          <select formControlName="type">
+              <option *ngFor="let type of groupType" [value]="type">{{type}}</option>
+          </select>
+        </div>
+    </div>
+    <!--This button allows user to save the details-->
+    <button type="submit" [disabled]="groupForm.invalid">Save</button>
+  </form>
+</div>

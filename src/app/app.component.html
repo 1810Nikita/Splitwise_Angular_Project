@@ -1,8 +1,12 @@
 <!--First page of splitwise application where you can find option for login to your account and use aplication-->
-<div class="text-center">
+<div  *ngIf="showLoginButton">
     <!--Heading-->
-    <h1>Welcome to Splitwise</h1>
+    <h1 class="text-center">Welcome to Splitwise</h1>
+
     <!--Button for routing to the login page-->
-    <button type="button" class="login" *ngIf="showLoginButton" routerLink="/login-signup/login"><i class='fas fa-user-graduate' id="graduate">Login to your Account</i></button>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end ">
+        <button type="button" class="btn btn-primary me-md-2"  routerLink="/login-signup/login"><i class='fas fa-user-graduate' id="graduate">Login</i></button>
+        <button type="button" class="btn btn-primary me-md-2"  routerLink="/login-signup/register"><i class='fas fa-user-graduate' id="graduate">Register</i></button>
+    </div>
 </div>
 <router-outlet></router-outlet>
