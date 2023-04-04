@@ -1,9 +1,6 @@
-@import 'variable.scss';
-h1 {
-    color: $primary-color;
-}
-
 h3 {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
     text-align: center;
-    color: $primary-color;
 }

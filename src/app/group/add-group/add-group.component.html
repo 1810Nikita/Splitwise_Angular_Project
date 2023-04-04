@@ -1,3 +1,4 @@
+<!--Heading-->
 <p class="text-center mt-5">START A NEW GROUP</p>
 
 <!-- This container holds the form that allows users to create a new group -->
@@ -7,7 +8,7 @@
 
     <!-- This section allows users to enter the group name -->
     <div class="group-name p-2">
-      <h3>My group shall be called....</h3>
+      <h1>My group shall be called....</h1>
       <input type="text" class="p-3" formControlName="groupName" placeholder="Enter Group Name" required>
     </div>
 
@@ -33,11 +34,11 @@
             </div>
 
             <!--This button allows user to delete the group members-->
-            <button type="button" class="col-sm-5" (click)="removeGroupMember(i)"><i class="fa fa-close"></i></button>
+            <button type="button" class="col-sm-2" (click)="removeGroupMember(i)"><i class="fa fa-close"></i></button>
           </div>
 
           <!-- This button allows users to add more group members -->
-          <button type="button" id="btn" class="btn btn-primary" (click)="addGroupMember()">Add +</button>
+          <button type="button" (click)="addGroupMember()">Add +</button>
         </div>
 
         <!--Group type-->
@@ -49,6 +50,6 @@
         </div>
     </div>
     <!--This button allows user to save the details-->
-    <button type="submit" id="btn" class="btn btn-primary mt-3" [disabled]="groupForm.invalid">Save</button>
+    <button type="submit" [disabled]="groupForm.invalid">Save</button>
   </form>
 </div>

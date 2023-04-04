@@ -1,40 +1,30 @@
-<div class="register">
-    <div class="container">
-        <!--register component-->
-        <div  class="row justify-content-center">
-            <!--Registration form-->
-            <form [formGroup]="registrationForm" class="form-group col-md-4 col-md-offset-5 align-center ">
-                <h3>Register</h3>
-                <!--Add email-->
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                    <input type="email" class="form-control"  id="username" formControlName="username" placeholder="name@example.com">
-                </div>
-
-                <!--Add Name-->
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Name</label>
-                    <input type="name" class="form-control"  id="name" formControlName="name" placeholder="Enter Name">
-                </div>
-
-                <!--Add password-->
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Password</label>
-                    <input type="password" class="form-control" placeholder="Password" id="password" formControlName="password">    
-                </div>
-
-                <!--Confirm password-->
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control" placeholder="Confirm Password" id="confirmPassword" formControlName="confirmPassword">    
-                </div>
-
-                <!--Buttons for login and navigation to registration page-->
-                <div class="d-grid gap-2 mt-2">
-                    <button type='button' class="btn btn-primary" (click)="onRegister()">Register</button>
-                </div>
-            </form>
+<div class="container">
+    <!--Registration form-->
+    <form [formGroup]="registrationForm">
+        <h3>Register Here</h3><br>
+        <div class="mt-3 mb-3">
+            <!--Email-->
+            <div class="email mb-2">
+                <label for="username">Email</label>
+                <input type="text" placeholder="Email" id="username" formControlName="username">
+            </div>
+            <!--Name-->
+            <div class="name mb-2">
+                <label for="name">Name</label>
+                <input type="name" placeholder="Name" id="name" formControlName="name">
+            </div>
+            <!--Password-->
+            <div class="password mb-2">
+                <label for="password">Password</label>
+                <input type="password" placeholder="Password" id="password" formControlName="password">
+            </div>
+            <!--Confirm Password-->
+            <div class="confirm-password mb-2">
+                <label for="password">Confirm Password</label>
+                <input type="password" placeholder="Confirm Password" id="confirmPassword" formControlName="confirmPassword">
+            </div>
         </div>
-
-    </div>
+        <!--Register button-->
+        <button type="button" class="btn" (click)="onRegister()">Register</button><br>    
+    </form>   
 </div>
