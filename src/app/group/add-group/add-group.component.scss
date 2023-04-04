@@ -1,0 +1,23 @@
+p {
+    margin-top: 10px;
+    text-align: center;
+}
+form {
+    border: none;
+    box-shadow: none;
+    width: 800px;
+    margin-top: 25px;
+}
+.member-field {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 10px; /* add some spacing between member fields and delete button */
+}
+
+.remove {
+    all: unset;
+    margin-left: 20px;
+    
+}

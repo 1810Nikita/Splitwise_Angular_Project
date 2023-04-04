@@ -1,1 +1,22 @@
-<p>login works!</p>
+<!--login component-->
+<div id="Login" class="container">
+    <!--login form-->
+    <form [formGroup]="loginForm">
+        <h3>Login Here</h3>
+        <div class="input-fields">
+            <!--Add email-->
+            <div class="mt-2">
+                <label for="username">Email</label>
+                <input type="text" placeholder="Email " id="username" formControlName="username">
+           </div>
+            <!--Add password-->
+            <div class="mt-2 mb-3">
+                <label for="password">Password</label>
+                <input type="password" placeholder="Password" id="password" formControlName="password">
+            </div>
+        </div>
+        <!--Buttons for login and navigation to registration page-->
+        <button type='button' class="btn" (click)="onLogin()">Log In</button>
+        <button type='button' class="btn" (click)="navigateToRegister()">Register</button>
+    </form>
+</div>
