@@ -1,0 +1,36 @@
+@import 'src/app/styles/layout/variable.scss';
+
+//list style
+.list {
+    height: 100vh;
+    background: linear-gradient(to top, #c9c9ff 50%, #6e6efe 90%) no-repeat ;
+    overflow: auto;
+}
+
+//heading style
+h2 {
+  color: $tertiary-color;
+}
+
+//table style
+table {
+  color: black;
+  border: 2px solid $primary-color;
+  background-color: $tertiary-color;
+}
+
+
+
+
+//responsive
+@media only screen and (max-width: 500px) {
+      .add {
+        position:absolute; 
+        top:0; 
+        right:0;
+      }
+
+    .btn {
+        display: inline-flex;
+    }
+  }

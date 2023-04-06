@@ -1,30 +1,44 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@import 'src/app/styles/layout/variable.scss';
+
+.group {
+    height: 100vh;
+    background: linear-gradient(to top, #c9c9ff 50%, #6e6efe 90%) no-repeat ;
+    overflow: auto;
 }
 
-form {
-    all: unset;
-    
+/* Adjustments for small screens */
+@media (max-width: 576px) {
+    .form-group {
+        width: 90%;
+        font-size: 24px;
+        padding: 24px;
+    }
 }
 
-.remove {
-    all: unset;   
+/* Adjustments for medium screens */
+@media (min-width: 576px) and (max-width: 992px) {
+    .form-group {
+        width: 70%;
+        font-size: 28px;
+        padding: 32px;
+    }
 }
 
-input{
-    all: unset;
-    border: 2px solid black;
+/* Adjustments for large screens */
+@media (min-width: 992px) and (max-width: 1200px) {
+    .form-group {
+        width: 50%;
+        font-size: 32px;
+        padding: 40px;
+    }
 }
 
-button {
-    all: unset;
-}
-
-#btn {
-    border: 2px solid #0000ff;
-    padding: 5px;
-    border-radius: 3px;
+/* Adjustments for extra-large screens */
+@media (min-width: 1200px) {
+    .form-group {
+        width: 30%;
+        font-size: 30px;
+        padding: 20px;
+    }
 }
 

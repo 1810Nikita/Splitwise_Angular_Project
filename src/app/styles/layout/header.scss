@@ -1,9 +1,11 @@
 @import 'variable.scss';
-h1 {
-    color: $primary-color;
-}
+
 
 h3 {
     text-align: center;
     color: $primary-color;
+}
+
+h2 {
+    color: $h3-color;
 }

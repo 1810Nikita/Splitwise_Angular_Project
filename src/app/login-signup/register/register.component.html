@@ -7,8 +7,8 @@
                 <h3>Register</h3>
                 <!--Add email-->
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                    <input type="email" class="form-control"  id="username" formControlName="username" placeholder="name@example.com">
+                    <label for="exampleFormControlInput1" class="form-label">Email Address</label>
+                    <input type="email" class="form-control"  id="username" formControlName="username" placeholder="Enter email">
                 </div>
 
                 <!--Add Name-->
@@ -32,6 +32,10 @@
                 <!--Buttons for login and navigation to registration page-->
                 <div class="d-grid gap-2 mt-2">
                     <button type='button' class="btn btn-primary" (click)="onRegister()">Register</button>
+                </div>
+
+                <div class="mt-2">Already Have an account 
+                    <a routerLink="/login-signup/login"> Log in</a>
                 </div>
             </form>
         </div>

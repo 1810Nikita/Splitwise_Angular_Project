@@ -1,4 +1,57 @@
-@import 'styles/layout/variable.scss';
 i {
-    margin-right: 10px;
+  margin-right: 5px ;
+}
+
+.container-fluid {
+  height: 80px;
+}
+
+.outer {
+background: #5959cb;
+}
+
+.container-fluid {
+  border-bottom: 2px solid #ffff;
+}
+
+
+
+
+
+/* Adjust logo size for smaller screens */
+.logo {
+  font-size: 32px; /* changed from 2rem to 32px */
+  margin-bottom: 0;
+  color: #ffff;
+}
+
+@media (max-width: 767px) {
+  .logo {
+    font-size: 24px; /* changed from 1.5rem to 24px */
   }
+}
+
+/* Adjust menu icon size for smaller screens */
+.menu_icon {
+  font-size: 24px; /* changed from 1.5rem to 24px */
+}
+
+@media (max-width: 767px) {
+  .menu_icon {
+    font-size: 20px;
+  }
+}
+
+/* Adjust menu button size for smaller screens */
+.menu button {
+  font-size: 14px;
+  padding: 3px 6px;
+}
+
+@media (max-width: 767px) {
+  .menu button {
+    font-size: 12px;
+    padding: 2px 4px;
+  }
+}
+

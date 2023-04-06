@@ -3,7 +3,6 @@
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-@import 'app/styles/components/button.scss';
 @import 'app/styles/layout/header.scss';
 @import 'src/app/styles/layout/Variable.scss';
 
@@ -13,30 +12,44 @@
 html, 
 body { 
   height: 100%; 
+  overflow: auto;
 }
 
 body { 
   margin: 0;
-  background-color: #ffff;
-  padding: 10px;
-  
+  background: #ffff;
 }
 
 //form design
 form {
   border: 1px solid $primary-color;
   padding: 15px; 
+  background-color: #ffff;
+  border-radius: 5px;
 }
 
 //lable styling
 label {
-  font-size: 20px;
+  font-size: $font-size;
   color: $primary-color;
 }
 
 //moving form 50px down from top of page
 .container {
-  padding-top: 50px;
+  padding-top: 80px;
 }
 
+//icon style
+#btn-delete {
+  color: red;
+  border: none;
+  background: none;
+  size: 12px;
+}
 
+#btn-edit {
+  color: blue;
+  border: none;
+  background: none;
+  size: 12px
+}

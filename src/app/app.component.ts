@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'splitwise';
   // Declare showLoginButton property
   showLoginButton: boolean;
+  
   constructor(private router: Router) {
     // Initialize showLoginButton property to true
     this.showLoginButton = true;
@@ -20,6 +21,13 @@ export class AppComponent {
         this.showLoginButton = false;
       }
     });
+
   }
+
+  ngOnInit(): void { 
+  }
+  }
+
   
-}
+  
+

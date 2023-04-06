@@ -7,6 +7,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {  FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login-signup/login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 
 
@@ -17,7 +19,9 @@ import { LoginComponent } from './login-signup/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent,
+    
    
 
    
