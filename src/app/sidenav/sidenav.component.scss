@@ -1,109 +1,97 @@
-body {
-    overflow-x: hidden;
-}
-
 .sidenav {
-  background :#f1e8f1;
-  transition: all .5s ease;
+  background: #f1e8f1;
+  transition: all 0.5s ease;
   position: fixed;
   z-index: 1;
-  
-  width: 5rem;
-  
+  top: 50px;
+  width: 80px;
   height: 100vh;
-  box-shadow: 0.063rem 0 1.25rem 0 #feeffe;
+  box-shadow: 1px 0 20px 0 #feeffe;
 
-  .logo-container{
+  .logo-container {
     display: flex;
     align-items: center;
-    padding: 0.938rem 0.938rem 0 0.938rem;
+    padding: 15px 15px 0 15px;
     width: 100%;
-
 
     .logo {
       background: #feeffe;
       text-align: center;
-      width: 3rem;
-      min-width: 3rem;
-      border-radius: 0.313rem;
-      padding: 0.313rem;
+      width: 48px;
+      min-width: 48px;
+      border-radius: 5px;
+      padding: 8px;
       font-size: 24px;
       font-weight: 900;
-
+      cursor: pointer;
+      border: none;
+      margin-top: 30px;
     }
 
     .logo-text {
-      margin-left: 1.5rem;
+      margin-left: 30px;
       font-size: 24px;
       font-weight: 700;
       color: rgb(124, 124, 227);
-
     }
 
-    .btn-close{
+    .btn-close {
       margin-left: auto;
       cursor: pointer;
-      width: 2rem;
-      height: 2rem;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       background-color: transparent;
       border: none;
-
-      #close {
-        color: blueviolet;
-        font-size: 24px;
-        
-      }
+      color: #8a2be2;
+      margin-top: 30px;
     }
-
-    
   }
 }
 
 .sidenav-collapsed {
-  width: 16.5626rem;
+  width: 265px;
 }
 
 .sidenav-nav {
   list-style: none;
-  padding: 0.938rem;
+  padding: 15px;
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: calc(100% - 3.65rem);
+  height: calc(100% - 58px);
   cursor: pointer;
 
   .sidenav-nav-item {
     width: 100%;
-    margin-bottom: 0.625rem;
+    margin-bottom: 10px;
 
     .sidenav-nav-link {
       display: flex;
       align-items: center;
-      height: 3rem;
+      height: 48px;
       color: blue;
       text-decoration: none;
-      border-radius: 0.5rem;
-      transition: all .3s ease;
+      border-radius: 10px;
+      transition: all 0.3s ease;
 
       .sidenav-link-icon {
         font-size: 22px;
-        width: 2rem;
-        min-width: 2rem;
-        margin: 0 0.5rem;
+        width: 32px;
+        min-width: 32px;
+        margin: 0 10px;
         text-align: center;
 
         .sidenav-link-text {
-          margin-left: 1.5rem;
+          margin-left: 30px;
         }
-    
       }
     }
   }
 
   .sidenav-nav-item:hover {
-    .sidenav-nav-link{
+    .sidenav-nav-link {
       background-color: blue;
       color: #f1e8f1;
     }
@@ -113,4 +101,16 @@ body {
 .active {
   background-color: #feeffe;
 }
-  
+
+@media screen and (max-height: 800px) {
+  .sidenav {
+    overflow: auto;
+  }
+}
+
+@media screen and (min-height: 600px) {
+  .sidenav {
+    overflow: hidden;
+    margin-top: 5px;
+  }
+}

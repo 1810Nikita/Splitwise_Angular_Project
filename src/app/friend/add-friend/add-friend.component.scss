@@ -1,48 +1,48 @@
 @import 'src/app/styles/layout/variable.scss';
 
-.add-expense {
+.group {
     height: 89vh;
     overflow: auto;
 } 
 
 @media (max-width: 576px) {
-  .add-expense {
+  .group {
     padding: 20px;
   }
 }
 
 //For screens smaller than 576px (extra small devices)
 @media (max-width: 300px) {
-    .form-group.col-md-4.col-md-offset-5.align-center {
+    .form-group {
       max-width: 100%;
     }
   }
   
 //For screens between 576px and 767.98px (small devices)
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .form-group.col-md-4.col-md-offset-5.align-center {
+  .form-group {
     max-width: 80%;
   }
 }
 
 //For screens between 768px and 991.98px (medium devices)
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .form-group.col-md-4.col-md-offset-5.align-center {
+  .form-group {
     max-width: 60%;
   }
 }
 
 //For screens between 992px and 1199.98px (large devices)
 @media (min-width: 992px) and (max-width: 1199.98px) {
-  .form-group.col-md-4.col-md-offset-5.align-center {
+  .form-group {
     max-width: 50%;
   }
 }
 
 //For screens larger than 1200px (extra large devices)
 @media (min-width: 1200px) {
-  .form-group.col-md-4.col-md-offset-5.align-center {
-    max-width: 40%;
+  .form-group {
+    max-width: 10%;
   }
 }
 

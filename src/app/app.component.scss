@@ -1,25 +1,9 @@
-i {
-  margin-right: 5px ;
-}
-
-.container-fluid {
-  height: 80px;
-}
-
-.outer {
-background: #5959cb;
-}
-
-.container-fluid {
-  border-bottom: 2px solid #ffff;
-}
-
-
-
-
-
+@import 'src/app/styles/layout/variable.scss';
 /* Adjust logo size for smaller screens */
-.logo {
+.sidenav {
+  background: $background-color ;
+}
+.navbar-brand {
   font-size: 32px; /* changed from 2rem to 32px */
   margin-bottom: 0;
   color: #ffff;
@@ -54,4 +38,15 @@ background: #5959cb;
     padding: 2px 4px;
   }
 }
+
+.sidenav {
+  background: linear-gradient(to top, #c9c9ff 50%, #6e6efe 90%) no-repeat ;
+  overflow: hidden;
+}
+
+#logout-button {
+  margin-right: 15px; /* adjust the value as needed */
+}
+
+
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, FormControl ,Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-group',
@@ -12,7 +13,7 @@ export class AddGroupComponent implements OnInit {
   groupType: string[] = ['Home', 'Trip', 'Couple', 'Other'];
   showGroupMembersForm: boolean;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private router: Router) {
     this.showGroupMembersForm = false;
   }
 
@@ -44,8 +45,8 @@ export class AddGroupComponent implements OnInit {
    */
   addGroupMember(): void {
     this.groupMembers.push(this.formBuilder.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]]
+      name: '',
+      email: ''
     }));
   }
 
@@ -57,8 +58,18 @@ export class AddGroupComponent implements OnInit {
     *This function is triggered when the user clicks the "Save" button to save the group data.
     *It logs the form value to the console and can be modified to call an API or service to save the group data.
   */
-  saveGroup(): void {
-    console.log(this.groupForm.value);
-    // call API or service to save group data
-  }
+    saveGroup(): void {
+      //console.log(this.groupForm.value);
+      // call API or service to save group data
+  
+      // Navigate to the group-list page
+      this.router.navigate(['/group-list']);
+    } 
+
+    onclick(): void {
+      this.router.navigate(['group/group-list']);
+    }
+ 
+
+ 
 }

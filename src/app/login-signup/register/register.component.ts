@@ -65,6 +65,6 @@ export class RegisterComponent implements OnInit{
     }
     alert('registered successfully')
 
-    this.router.navigateByUrl('/home')
+    this.router.navigateByUrl('/dashboard')
   }  
 }

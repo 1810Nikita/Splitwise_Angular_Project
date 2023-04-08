@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit{
     } else{
       alert('user not found please Register');
     }
-    this.router.navigateByUrl('/home')
+    this.router.navigateByUrl('/dashboard')
   }
   
   /**

@@ -11,13 +11,11 @@
 
 html, 
 body { 
-  height: 100%; 
-  overflow: auto;
-}
-
-body { 
+  height: 100vh;
   margin: 0;
-  background: #ffff;
+  padding: 0;
+  object-fit: cover;
+  background: $background-color;
 }
 
 //form design
@@ -52,4 +50,12 @@ label {
   border: none;
   background: none;
   size: 12px
+}
+
+#btn {
+  font-size: $font-size;
+}
+
+h4 {
+  color: #585555;
 }

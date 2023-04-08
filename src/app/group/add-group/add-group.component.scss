@@ -1,12 +1,12 @@
 @import 'src/app/styles/layout/variable.scss';
 
+//body style
 .group {
-    height: 100vh;
-    background: linear-gradient(to top, #c9c9ff 50%, #6e6efe 90%) no-repeat ;
+    height: 89vh;
     overflow: auto;
 }
 
-/* Adjustments for small screens */
+//Adjustments for small screens
 @media (max-width: 576px) {
     .form-group {
         width: 90%;
@@ -15,7 +15,7 @@
     }
 }
 
-/* Adjustments for medium screens */
+//Adjustments for medium screens
 @media (min-width: 576px) and (max-width: 992px) {
     .form-group {
         width: 70%;
@@ -24,7 +24,7 @@
     }
 }
 
-/* Adjustments for large screens */
+//Adjustments for large screens
 @media (min-width: 992px) and (max-width: 1200px) {
     .form-group {
         width: 50%;
@@ -33,7 +33,7 @@
     }
 }
 
-/* Adjustments for extra-large screens */
+//Adjustments for extra-large screens
 @media (min-width: 1200px) {
     .form-group {
         width: 30%;
@@ -41,4 +41,6 @@
         padding: 20px;
     }
 }
+
+
 

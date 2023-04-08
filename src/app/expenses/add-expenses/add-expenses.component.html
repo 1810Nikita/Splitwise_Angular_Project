@@ -1,5 +1,5 @@
 <!--expense form-->
-<div class="add-expense" *ngIf="showForm">
+<div class="add-expense">
   <div class="container">
       <!--row-->
       <div  class="row justify-content-center">
@@ -15,12 +15,12 @@
                     <input class="form-control" type="text" formControlName="name">
                   </div>
                   <div class="col-auto mt-4">
-                    <button type="button" *ngIf="people.length > 1" (click)="removePerson(i)"><i class="fa fa-close"></i></button>
+                    <button type="button" id="btn-delete" *ngIf="people.length > 1" (click)="removePerson(i)"><i class="fa fa-trash"></i></button>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-auto">
-                    <button type="button" class="btn btn-success m-1" (click)="addPerson()">Add Person</button>
+                    <button type="button"  class="btn btn-success m-1" (click)="addPerson()">Add Person</button>
                   </div>
                 </div>
               </div>

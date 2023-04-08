@@ -1,0 +1,37 @@
+<div class="friend">
+  <div class="container">
+    <form [formGroup]="inviteForm" (ngSubmit)="onSubmit()">
+      <h3>Add Friend</h3>
+      <div formArrayName="names">
+        <h2>Enter Name and Email :</h2>
+        <div class="row" *ngFor="let name of names.controls; let i = index" [formGroupName]="i">
+    
+          <!--Name-->
+          <div class="col-auto">
+            <input type="text" formControlName="name" placeholder="Name"  class="mb-2">
+          </div>
+        
+          <!--Email-->
+          <div class="col-auto mb-2">
+            <input type="email" formControlName="email" placeholder="Email">
+          </div>
+        
+          <!--Delete Button-->
+          <div class="col-auto">
+            <button type="button" id="btn-delete" (click)="deleteNameInput(i)"><i class="fa fa-close"></i></button>
+          </div>
+        </div>
+    
+        <!-- This button allows users to add more group members -->
+        <button type="button" id="btn-edit"  class="add m-2" (click)="addNameInput()">+Add new friend</button>
+      </div>
+      
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label"><h4>Add Message:</h4></label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+      <button type="submit" class="btn btn-success">Send Invite</button>
+    </form>
+      
+  </div>
+</div>

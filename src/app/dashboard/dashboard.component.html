@@ -1,1 +1,25 @@
-<p>dashboard works!</p>
+<div class="dashboard">
+    <!-- Dashboard card -->
+    <mat-card>
+        <mat-card-header>
+          <mat-card-title><h4>Dashboard</h4></mat-card-title>  
+        </mat-card-header>
+        <mat-card-actions align="end">
+            <!-- Add Expense button -->
+            <button mat-flat-button color="primary" class="btn" routerLink="/expense/add-expense" mat-small-button>Add Expense</button>
+            <!-- settle up button -->
+            <button mat-flat-button color="accent" routerLink="/settle-up" mat-small-button>Settle up</button>
+        </mat-card-actions>
+    </mat-card>
+    <!-- all balance grid -->
+    <div class="grid-container1">
+        <div class="grid-item1">Total balance</div>
+        <div class="grid-item1">You owe</div>
+        <div class="grid-item1">You are owed</div>
+      </div>
+    <!-- You Owe / You are owed grids -->
+    <div class="grid-container">
+        <div class="grid-item"><h4>You Owe</h4></div>  
+        <div class="grid-item"><h4>You are owed</h4></div>
+    </div>
+</div>
