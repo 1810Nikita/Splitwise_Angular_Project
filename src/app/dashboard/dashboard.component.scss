@@ -1,18 +1,22 @@
 @import 'src/app/styles/layout/variable.scss';
 
+//styles for the dashboard section.
 .dashboard {
     height: 89vh;
     overflow: auto;
 
-    h4 {
-        text-align: center;
+    //heading
+    .navbar-brand {
+        margin-bottom: 0;
         color: $primary-color;
-    }
-
+        margin-left: 5px;
+      }
+    //button
     .btn {
         margin-right: 2px;
     }
 
+    //container style for owe and owed section
     .grid-container {
         display: grid;
         grid-template-columns: auto auto;
@@ -30,16 +34,15 @@
     .grid-container {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 5px;
-      }
-    
+    }    
+}
 }
 
-}
-
+//style for all transaction
 .grid-container1 {
     display: grid;
     margin:2px ;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 2px;
 }
 
@@ -67,6 +70,25 @@
 @media (min-width:600px) and (max-width: 850px) {
     .dashboard {
         height: 93.5vh;
+    }
+}
+
+@media (max-width: 600px) {
+    .dashboard-btn {
+        margin: 15px;
+    }
+}
+
+@media (min-width:600px) and (max-width: 800px) {
+    .dashboard-btn {
+        margin: 15px;
+    }
+}
+
+@media (max-width: 670px) {
+    #navbar-button {
+        font-size: 10px;
+        padding: 4px 8px;
     }
 }
 

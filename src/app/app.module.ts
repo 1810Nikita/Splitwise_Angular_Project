@@ -16,7 +16,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { BodyComponent } from './body/body.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { SettleUpComponent } from './settle-up/settle-up.component';
+
 
 
 
@@ -29,7 +29,7 @@ import { SettleUpComponent } from './settle-up/settle-up.component';
     DashboardComponent,
     SidenavComponent,
     BodyComponent,
-    SettleUpComponent,
+    
   
     
     

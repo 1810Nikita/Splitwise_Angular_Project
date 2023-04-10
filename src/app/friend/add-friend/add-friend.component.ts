@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-friend',
@@ -10,7 +11,7 @@ export class AddFriendComponent {
 
   inviteForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     this.inviteForm = this.fb.group({
@@ -39,5 +40,9 @@ export class AddFriendComponent {
 
   onSubmit(): void {
     alert('Invitation send successfully');
+  }
+
+  closeForm(): void {
+    this.router.navigate(['/dashboard']);
   }
 }

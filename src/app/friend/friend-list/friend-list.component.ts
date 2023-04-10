@@ -11,6 +11,7 @@ export class FriendListComponent {
 
   constructor(private router: Router){};
 
+  //array of friend
   friends: Friend[] = [
     { name: 'John', email: 'john@example.com', amountYouOwe: 0, amountFriendOwes: 0 },
     { name: 'Jane', email: 'jane@example.com', amountYouOwe: 0, amountFriendOwes: 0 },

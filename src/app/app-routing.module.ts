@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { SettleUpComponent } from './settle-up/settle-up.component';
+
 
 const routes: Routes = [
   {path:'login-signup', loadChildren:()=> import('./login-signup/login-signup.module')
@@ -18,7 +18,7 @@ const routes: Routes = [
   
   {path: 'dashboard', component:DashboardComponent},
 
-  {path: 'settle-up', component:SettleUpComponent}
+ 
 ];
 
 @NgModule({

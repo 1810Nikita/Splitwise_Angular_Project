@@ -4,63 +4,65 @@
 <!-- This container holds the form that allows users to create a new group -->
 <div class="container">
   <!-- This form group contains the group name and group members form array -->
-  <form [formGroup]="groupForm" (ngSubmit)="saveGroup()">
+  <div class="row justify-content-center">
+    <form [formGroup]="groupForm" (ngSubmit)="saveGroup()">
 
-    <!-- This section allows users to enter the group name -->
-    <div class="mb-1">
-      <label for="exampleFormControlInput1" class="form-label"><h3>My group shall be called....</h3></label><br>
-      <input type="text" class="form-control p-4" id="exampleFormControlInput1" formControlName="groupName" placeholder="Enter Group Name" required>
-    </div>
-    <hr class="hr hr-blurry" />
-
-    <!-- This section only becomes visible when a group name has been entered -->
-    <div *ngIf="showGroupMembersForm">
-        <h2 class="mb-1">GROUP MEMBER</h2>
-
-        <!-- This form array holds the group member form groups -->
-        <div formArrayName="groupMembers">
-
-          <!-- This section shows the group member form groups -->
-          <div class="row" *ngFor="let member of groupMembers.controls; let i = index" [formGroupName]="i">
-
-            <!--Name-->
-            <div class="col-auto">
-              <input type="text" formControlName="name" placeholder="Name"  class="mb-2">
+      <!-- This section allows users to enter the group name -->
+      <div class="mb-1">
+        <label for="exampleFormControlInput1" class="form-label"><h3>My group shall be called....</h3></label><br>
+        <input type="text" class="form-control p-4" id="exampleFormControlInput1" formControlName="groupName" placeholder="Enter Group Name" required>
+      </div>
+      <hr class="hr hr-blurry" />
+  
+      <!-- This section only becomes visible when a group name has been entered -->
+      <div *ngIf="showGroupMembersForm">
+          <h2 class="mb-1">GROUP MEMBER</h2>
+  
+          <!-- This form array holds the group member form groups -->
+          <div formArrayName="groupMembers">
+  
+            <!-- This section shows the group member form groups -->
+            <div class="row" *ngFor="let member of groupMembers.controls; let i = index" [formGroupName]="i">
+  
+              <!--Name-->
+              <div class="col-auto">
+                <input type="text" formControlName="name" placeholder="Name"  class="mb-2">
+              </div>
+            
+              <!--Email-->
+              <div class="col-auto mb-2">
+                <input type="email" formControlName="email" placeholder="Email">
+              </div>
+            
+              <!--Delete Button-->
+              <div class="col-auto">
+                <button type="button" id="btn-delete" (click)="removeGroupMember(i)"><i class="fa fa-close"></i></button>
+              </div>
             </div>
-          
-            <!--Email-->
-            <div class="col-auto mb-2">
-              <input type="email" formControlName="email" placeholder="Email">
-            </div>
-          
-            <!--Delete Button-->
-            <div class="col-auto">
-              <button type="button" id="btn-delete" (click)="removeGroupMember(i)"><i class="fa fa-close"></i></button>
-            </div>
+        
+            <!-- This button allows users to add more group members -->
+            <button type="button" id="btn-edit"  class="add" (click)="addGroupMember()">+Add a person</button>
           </div>
+          <hr class="hr hr-blurry" />
+  
+          <!--Group type-->
+          <div>
+            <h4>GROUP TYPE</h4>
+            <select formControlName="type">
+                <option *ngFor="let type of groupType" [value]="type">{{type}}</option>
+            </select>
+          </div>
+          <hr class="hr hr-blurry" />
+          <div class="form-check form-switch m-1">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Simplify group debts?</label>
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+          </div>
+      </div>
+      <!--This button allows user to save the details-->
+      <button type="submit" id="btn" class="btn btn-primary" (click)="onclick()">Save</button>
       
-          <!-- This button allows users to add more group members -->
-          <button type="button" id="btn-edit"  class="add" (click)="addGroupMember()">+Add a person</button>
-        </div>
-        <hr class="hr hr-blurry" />
-
-        <!--Group type-->
-        <div>
-          <h4>GROUP TYPE</h4>
-          <select formControlName="type">
-              <option *ngFor="let type of groupType" [value]="type">{{type}}</option>
-          </select>
-        </div>
-        <hr class="hr hr-blurry" />
-        <div class="form-check form-switch m-1">
-          <label class="form-check-label" for="flexSwitchCheckDefault">Simplify group debts?</label>
-          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-        </div>
-    </div>
-    <!--This button allows user to save the details-->
-    <button type="submit" id="btn" class="btn btn-primary" (click)="onclick()">Save</button>
-    
-  </form>
+    </form>
+  </div>
 </div>
 
 </div>

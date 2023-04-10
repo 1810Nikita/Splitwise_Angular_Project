@@ -44,18 +44,14 @@ export class AddExpensesComponent implements OnInit {
     this.people.removeAt(index);
   }
 
-  onSubmit() {
+  onSubmit(): void {
     // handle form submission
     this.router.navigate(['expense/expense-list']);
-    
-
   }
 
   // Navigate back to dashboard when the close button is clicked
-  closeForm() {
+  closeForm(): void {
     this.router.navigate(['/dashboard']);
 
-  }
-
-  
+  }  
 }
