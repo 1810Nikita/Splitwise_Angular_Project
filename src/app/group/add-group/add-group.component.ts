@@ -60,8 +60,7 @@ export class AddGroupComponent implements OnInit {
   */
     saveGroup(): void {
       //console.log(this.groupForm.value);
-      // call API or service to save group data
-  
+      // call API or service to save group data  
       // Navigate to the group-list page
       this.router.navigate(['/group-list']);
     } 
