@@ -7,6 +7,18 @@ export const navbarData = [
     },
 
     {
+        routeLink:"/expense/expense-list",
+        icon: 'fa fa-list-alt',
+        lable: 'All Expense ',
+    },
+    {
+        routeLink:"/expense/add-expense",
+        icon: 'fa fa-money',
+        lable: 'Add Expense',
+    },
+
+
+    {
         routeLink:"/group/add-group",
         icon: 'fa fa-group ',
         lable: 'Add Group',
@@ -16,18 +28,6 @@ export const navbarData = [
         routeLink:"/group/group-list",
         icon: 'fa fa-list',
         lable: 'Group List',
-    },
-
-    {
-        routeLink:"/expense/add-expense",
-        icon: 'fa fa-money',
-        lable: 'Add Expense',
-    },
-
-    {
-        routeLink:"/expense/expense-list",
-        icon: 'fa fa-list-alt',
-        lable: 'Expense List',
     },
 
     {
