@@ -1,36 +1,43 @@
 <!-- This container holds the list of groups -->
-<div class="expense-list" >
-    <div class="container" style="overflow-x:auto;">
-        <div class="text-end">
-            <button class="btn btn-light" routerLink="/expense/add-expense">Add</button>
-        </div>
-        <h2>Expense list</h2>
-        <!--content of table-->
-        <table class="table">
-            <!--Table head-->
-            <thead>
-                <tr>
-                    <th>Description</th>
-                    <th>Amount</th>
-                    <th>People</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            
-            <!--table body-->
-            <tbody>
-                <tr *ngFor="let expense of expenses">
-                    <td>{{ expense.description }}</td>
-                    <td>{{ expense.amount }}</td>
-                    <td>{{ expense.people.join(', ') }}</td>
-
-                    <!--Button for add,edit-->
-                    <td>
-                        <button id="btn-edit" class="fas fa-pen" (click)="editExpense(expense)"></button>
-                        <button id="btn-delete" class="fa fa-trash" (click)="deleteExpense(expense)"></button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+<div class="expense-list">
+  <div class="container" style="overflow-x:auto;">
+    <div class="text-end">
+      <button class="btn btn-light" routerLink="/expense/add-expense">Add</button>
     </div>
+    <!--Heading-->
+    <h2>Expense list</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>People</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <!--table body-->
+      <tbody>
+        <ng-container *ngFor="let expense of expenses; let i = index">
+          <tr (click)="toggleDetails(i)">
+            <td>{{ expense.description }}</td>
+            <td>{{ expense.amount }}</td>
+            <td>{{ expense.people.join(', ') }}</td>
+            <td>
+              <button id="btn-edit" class="fas fa-pen" (click)="editExpense(expense)"></button>
+              <button id="btn-delete" class="fa fa-trash" (click)="deleteExpense(expense)"></button>
+            </td>
+          </tr>
+          <tr *ngIf="selectedExpenseIndices.includes(i)">
+              <td colspan="4">
+                <div>
+                  <p *ngFor="let person of expenseDetails[i].split('\n')">
+                    {{ person }} 
+                  </p>
+                </div>
+              </td>
+          </tr>             
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
 </div>
