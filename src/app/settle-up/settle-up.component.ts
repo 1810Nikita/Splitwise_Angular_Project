@@ -27,18 +27,18 @@ export class SettleUpComponent implements OnInit {
   * opens the cash payment form after click on the button
   * close the form on double click on button
   */ 
-  toggleForm() {
+  toggleForm(): void {
     this.showSettleUpForm = !this.showSettleUpForm;
   }
 
   //submit the form
-  onSubmit() {
+  onSubmit(): void {
     // handle form submission
     alert('Payment done successfully.');
   }
 
   // Navigate back to dashboard when the close button is clicked
-  closeForm() {
+  closeForm(): void {
     this.router.navigate(['/dashboard']);
   }  
 }
