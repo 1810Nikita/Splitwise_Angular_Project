@@ -14,11 +14,13 @@
   background-color: $navbar-color;
 }
 
+#logout-button {
+  margin-right: 15px; 
+}
 
-@media (max-width: 767px) {
-  .logo {
-    font-size: 24px; 
-  }
+.menu-button {
+  font-size: 14px;
+  padding: 3px 6px;
 }
 
 /* Adjust menu icon size for smaller screens */
@@ -30,13 +32,12 @@
   .menu-icon {
     font-size: 20px;
   }
+  .logo {
+    font-size: 24px; 
+  }
 }
 
 /* Adjust menu button size for smaller screens */
-.menu-button {
-  font-size: 14px;
-  padding: 3px 6px;
-}
 
 @media (max-width: 767px) {
   .menu-button {
@@ -44,10 +45,3 @@
     padding: 2px 4px;
   }
 }
-
-#logout-button {
-  margin-right: 15px; 
-}
-
-
-

@@ -13,7 +13,11 @@ export class AddExpensesComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private router: Router) {};
 
   ngOnInit() {
-    // Create the expense form with required fields
+    /* Create the expense form with required fields, including:
+     * - description: a required field for entering a description of the expense
+     * - amount: a required field for entering the amount of the expense
+     * - people: an array of people who shared the expense, which includes at least one person by default
+     */
     this.expenseForm = this.formBuilder.group({
       description: ['', Validators.required],
       amount: ['', Validators.required],
@@ -21,7 +25,10 @@ export class AddExpensesComponent implements OnInit {
     });
   }
 
-  //for adding person
+  /* This function creates a new person form group, which includes:
+   * - name: a required field for entering the name of the person
+   * This is used when adding a new person to the array of people who shared the expense.
+   */
   createPerson(): FormGroup {
     return this.formBuilder.group({
       name: ['', Validators.required]
@@ -43,15 +50,18 @@ export class AddExpensesComponent implements OnInit {
     this.people.removeAt(index);
   }
 
-  //after submission it shows the expense list
+  /* This function is called when the expense form is submitted.
+   * It handles form submission and navigates to the expense list page.
+   */
   onSubmit(): void {
     // handle form submission
     this.router.navigate(['expense/expense-list']);
   }
 
-  // Navigate back to dashboard when the close button is clicked
+  /* This function is called when the close button is clicked.
+   * It navigates back to the dashboard page.
+   */
   closeForm(): void {
     this.router.navigate(['/dashboard']);
-
   }  
 }

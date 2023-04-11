@@ -66,11 +66,36 @@ h2 {
 }
 
 //table style
-table {
-  color: #000000;
+.table {
   border: 2px solid $primary-color;
   background-color: $tertiary-color;
 }
+
+//list style
+.list {
+  height: 89vh;
+  overflow: auto;
+}
+
+.list-container {
+  overflow-x: auto;
+}
+
+//form style
+.detail-form {
+  display: flex;
+  justify-content: center;
+  height: 89vh;
+  overflow: auto;
+} 
+
+//on small screen set padding
+@media (max-width: 576px) {
+  .detail-form {
+    padding: 20px;
+  }
+}
+
 
 //For screens smaller than 576px (extra small devices)
 @media (max-width: 300px) {

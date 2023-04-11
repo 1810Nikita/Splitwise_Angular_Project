@@ -18,10 +18,13 @@ export class AddGroupComponent implements OnInit {
   }
 
   /**
-    * Initializes the component with an empty Group form.
-    * This function is automatically called by Angular when the component is created.
-    * The form controls are defined using the Reactive Forms API.
-  */
+   * Initializes the component with an empty Group form.
+   * This function is automatically called by Angular when the component is created.
+   * The form controls are defined using the Reactive Forms API.
+   * 
+   * @param none
+   * @returns void
+   */
   ngOnInit(): void {
     this.groupForm = this.formBuilder.group({
       groupName: ['', Validators.required],
@@ -39,9 +42,12 @@ export class AddGroupComponent implements OnInit {
   }
 
   /**
-   * Handles the add group member button
-   *  The FormGroup contains two FormControls: name and email. 
+   * Handles the add group member button.
+   * The FormGroup contains two FormControls: name and email.
    * The name control is required and the email control is required and must be a valid email.
+   * 
+   * @param none
+   * @returns void
    */
   addGroupMember(): void {
     this.groupMembers.push(this.formBuilder.group({
@@ -50,21 +56,36 @@ export class AddGroupComponent implements OnInit {
     }));
   }
 
-  //remove the group member by delete button
+  /**
+   * Handles the delete group member button.
+   * 
+   * @param index - The index of the group member to be removed.
+   * @returns void
+   */
   removeGroupMember(index: number): void {
     this.groupMembers.removeAt(index);
   }
 
   /**
-    *This function is triggered when the user clicks the "Save" button to save the group data.
-    *It logs the form value to the console and can be modified to call an API or service to save the group data.
-  */
+   * Saves the group data.
+   * This function is triggered when the user clicks the "Save" button to save the group data.
+   * It logs the form value to the console and can be modified to call an API or service to save the group data.
+   * 
+   * @param none
+   * @returns void
+   */
   saveGroup(): void {
     // call API or service to save group data
     // Navigate to the group-list page
     this.router.navigate(['/group-list']);
   } 
 
+  /**
+   * Navigates to the group-list page.
+   * 
+   * @param none
+   * @returns void
+   */
   onclick(): void {
     this.router.navigate(['group/group-list']);
   } 

@@ -1,7 +1,7 @@
 <!--Friend list-->
-<div class="friend-list" >
-    <div class="container" style="overflow-x:auto;">
-        <div class="text-end">
+<div class="list" >
+    <div class="list-container">
+        <div class="text-end mt-5">
             <button class="btn btn-light" routerLink="/friend/add-friend">Add</button>
         </div>
         <h2>friend list</h2>
@@ -20,6 +20,7 @@
             
             <!--table body-->
             <tbody>
+                <!--row of name, email, you owe and friend owes-->
                 <tr *ngFor="let friend of friends">
                     <td>{{ friend.name }}</td>
                     <td>{{ friend.email }}</td>

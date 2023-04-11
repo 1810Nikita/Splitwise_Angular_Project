@@ -1,6 +1,6 @@
 <!-- This container holds the list of groups -->
 <div class="list">
-  <div class="container" style="overflow-x:auto;">
+  <div class="list-container">
     <div class="text-end">
       <button class="btn btn-light" routerLink="/group/add-group">Add</button>
     </div>
@@ -24,12 +24,16 @@
           <td>{{ group.type }}</td>
           <!--only name of group member will shown-->
           <td>
+            <!-- Check if group.members exists and has a length greater than 0 -->
             <ng-container *ngIf="group.members && group.members.length > 0; else noMembers">
+              <!-- Display the first member's name -->
               {{ group.members[0].name }}
+              <!-- Loop through the remaining members and display their names with commas -->
               <span *ngFor="let member of group.members.slice(1)">
                 , {{ member.name }}
               </span>
             </ng-container>
+            <!-- If group.members does not exist or has a length of 0, display "No members" -->
             <ng-template #noMembers>
               No members
             </ng-template>

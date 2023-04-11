@@ -16,8 +16,12 @@
         margin-right: 2px;
     }
 
+    .navbar {
+        background-color: $secondary-color;
+    }
+
     //container style for owe and owed section
-    .grid-container {
+    .grid-container-owe-owed {
         display: grid;
         grid-template-columns: auto auto;
         padding: 10px;
@@ -25,31 +29,24 @@
         text-align: center;
     }
 
-    .grid-item {
+    .grid-item-owe-owed {
         border: 1px solid $primary-color;
         padding: 20px;
         background-color: $secondary-color;
         height: 400px;
     }
-    
-    @media only screen and (max-width: 600px) {
-        .grid-container {
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 5px;
-        }    
-    }
 }
 
 //style for all transaction
-.grid-container1 {
+.grid-container-all-expense {
     display: grid;
     margin:2px ;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 2px;
 }
    
-.grid-item1 {
-    background-color: #f8ecf6;
+.grid-item-all-expense {
+    background-color: $grid-color;
     padding: 20px;
     text-align: center;
     font-size: 15px;
@@ -58,7 +55,7 @@
 
 // on small screen change the layout of total balance section
 @media only screen and (max-width: 600px) {
-    .grid-container1 {
+    .grid-container-all-expense {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 5px;
     }
@@ -96,3 +93,9 @@
     }
 }
 
+@media only screen and (max-width: 600px) {
+    .grid-container-owe-owed {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 5px;
+    }    
+}

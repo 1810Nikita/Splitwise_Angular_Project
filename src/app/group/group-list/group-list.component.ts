@@ -27,11 +27,19 @@ export class GroupListComponent {
     }
   ];  
 
-  //direct to settle up page
+  /**
+   * direct to settle up page
+   */
   onAddExpense(): void {
     this.router.navigate(['/expense/add-expense']);
   }
 
+  /**
+   *  Deletes the specified group from the list of groups and emits the
+   * updated list as an Observable.
+   * @param group The group to delete.
+   * @return An Observable that emits the updated list of groups
+   */
   onDelete(group: Group): void {
     //functionality for deleting a group
     const index = this.groups.indexOf(group);

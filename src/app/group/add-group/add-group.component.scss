@@ -8,6 +8,10 @@
     margin-right: 10px;
 }
 
+.text-center {
+    color: $tertiary-color;
+}
+
 //Adjustments for small screens
 @media (max-width: 576px) {
     .form-group {
