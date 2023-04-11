@@ -21,7 +21,7 @@ body {
 form {
   border: 1px solid $primary-color;
   padding: 15px; 
-  background-color: #fff;
+  background-color: $tertiary-color;
   border-radius: 5px;
 }
 
@@ -38,14 +38,14 @@ label {
 
 //icon style
 #btn-delete {
-  color: red;
+  color: $red;
   border: none;
   background: none;
   size: 12px;
 }
 
 #btn-edit {
-  color: blue;
+  color: $primary-color;
   border: none;
   background: none;
   size: 12px

@@ -5,13 +5,13 @@
   overflow: hidden;
 }
 .navbar-brand {
-  font-size: 32px;
+  font-size: $navbar-font;
   margin-bottom: 0;
-  color: #fff;
+  color: $tertiary-color;
 }
 
 #navbar {
-  background-color: #24247e;
+  background-color: $navbar-color;
 }
 
 

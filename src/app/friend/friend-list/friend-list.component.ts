@@ -31,5 +31,3 @@ export class FriendListComponent {
     this.router.navigate(['/settle-up']);
   }
 }
-
-
