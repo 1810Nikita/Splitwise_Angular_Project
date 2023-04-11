@@ -21,7 +21,7 @@
 @media (max-width: 576px) {
   .form-group {
     width: 90%;
-    font-size: 24px;
+    font-size: $font-size;
     padding: 24px;
   }
 }
@@ -39,7 +39,7 @@
 @media (min-width: 992px) and (max-width: 1200px) {
 .form-group {
     width: 50%;
-    font-size: 32px;
+    font-size: $navbar-font;
     padding: 40px;
   }
 }
@@ -48,13 +48,13 @@
 @media (min-width: 1200px) {
   .form-group {
     width: 30%;
-    font-size: 20px;
+    font-size: $font-size;
     padding: 20px;
   }
 }
 
 .register .mt-2 {
-  font-size: 20px;
+  font-size: $font-size;
 }
 
 @media (min-width: 992px) {
