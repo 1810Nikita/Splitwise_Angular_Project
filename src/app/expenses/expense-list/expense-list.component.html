@@ -2,7 +2,7 @@
 <div class="list">
   <div class="container" style="overflow-x:auto;">
     <div class="text-end">
-      <button class="btn btn-light" routerLink="/expense/add-expense">Add</button>
+      <button type="button" class="btn btn-light" routerLink="/expense/add-expense">Add</button>
     </div>
     <!--Heading-->
     <h2>Expense list</h2>
@@ -24,13 +24,16 @@
             <td>{{ expense.people.join(', ') }}</td>
             <td>
               <!--buttons for edit and delete-->
-              <button id="btn-edit" class="fas fa-pen" (click)="editExpense(expense)"></button>
-              <button id="btn-delete" class="fa fa-trash" (click)="deleteExpense(expense)"></button>
+              <button type="button" id="btn-edit" class="fas fa-pen" (click)="editExpense(expense)"></button>
+              <button type="button" id="btn-delete" class="fa fa-trash" (click)="deleteExpense(expense)"></button>
             </td>
           <!--table of per person expanse-->
           </tr>
+          <!-- Display a row for each expense that has been selected -->
           <tr *ngIf="selectedExpenseIndices.includes(i)">
+            <!-- Span all four columns of the table -->
             <td colspan="4">
+              <!-- Display the expense details as a list of paragraphs -->
               <div>
                 <p *ngFor="let person of expenseDetails[i].split('\n')">
                   {{ person }} 

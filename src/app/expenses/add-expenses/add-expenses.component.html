@@ -9,22 +9,26 @@
         
         <!--form for person-->
         <div class="form-group" formArrayName="people">
+          <!-- Loop through each person in the people form array -->
           <div class="row" *ngFor="let person of people.controls; let i=index" [formGroupName]="i">
             <div class="col">
+              <!-- Display a label and input field for the person's name -->
               <label>Person {{ i + 1 }}:</label>
               <input class="form-control" type="text" formControlName="name">
             </div>
             <div class="col-auto mt-4">
+              <!-- Display a button to remove the current person, but only if there is more than one person in the array -->
               <button type="button" id="btn-delete" *ngIf="people.length > 1" (click)="removePerson(i)"><i class="fa fa-trash"></i></button>
             </div>
           </div>
+          <!-- Display a button to add a new person to the array -->
           <div class="row">
             <div class="col-auto">
               <button type="button"  class="btn btn-success m-1" (click)="addPerson()">Add Person</button>
             </div>
           </div>
         </div>
-        
+                
         <!--description-->
         <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label">Description:</label>

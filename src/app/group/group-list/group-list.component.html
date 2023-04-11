@@ -2,7 +2,7 @@
 <div class="list">
   <div class="list-container">
     <div class="text-end">
-      <button class="btn btn-light" routerLink="/group/add-group">Add</button>
+      <button type="button" class="btn btn-light" routerLink="/group/add-group">Add</button>
     </div>
     <h2>Group List</h2>
     
@@ -39,9 +39,9 @@
             </ng-template>
           </td>          
           <td>
-            <button id="btn-edit" class="fa fa-dollar" (click)="onAddExpense()"></button>
-            <button id="btn-edit" class="fas fa-pen m-1" routerLink="/group/add-group"></button>
-            <button id="btn-delete" class="fa fa-trash m-1" (click)="onDelete(group)"></button>
+            <button type="button" id="btn-edit" class="fa fa-dollar" (click)="onAddExpense()"></button>
+            <button type="button" id="btn-edit" class="fas fa-pen m-1" routerLink="/group/add-group"></button>
+            <button type="button" id="btn-delete" class="fa fa-trash m-1" (click)="onDelete(group)"></button>
           </td>
         </tr>
       </tbody>

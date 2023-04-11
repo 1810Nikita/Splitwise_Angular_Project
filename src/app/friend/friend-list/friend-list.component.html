@@ -2,7 +2,7 @@
 <div class="list" >
     <div class="list-container">
         <div class="text-end mt-5">
-            <button class="btn btn-light" routerLink="/friend/add-friend">Add</button>
+            <button type="button" class="btn btn-light" routerLink="/friend/add-friend">Add</button>
         </div>
         <h2>friend list</h2>
         <!--content of table-->
@@ -28,8 +28,8 @@
                     <td></td>
                     <!--Button for delete-->
                     <td>
-                        <button id="btn-edit" class="fa fa-paypal" (click)="onSettleUp(friend)"></button>
-                        <button id="btn-delete" class="fa fa-trash" (click)="onDelete(friend)"></button>
+                        <button type="button" id="btn-edit" class="fa fa-paypal" (click)="onSettleUp(friend)"></button>
+                        <button type="button" id="btn-delete" class="fa fa-trash" (click)="onDelete(friend)"></button>
                     </td>
                 </tr>
             </tbody>

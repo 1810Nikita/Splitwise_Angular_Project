@@ -11,7 +11,9 @@ export class ExpenseListComponent {
 
   constructor(private router: Router) {}
 
-  // Array of Expense objects representing the expenses to be displayed
+  /**
+   * Array of Expense objects representing the expenses to be displayed
+   */
   expenses: Expense[] = [
     { description: 'Rent', amount: 1000, people: ['John', 'Jane'] },
     { description: 'Groceries', amount: 200, people: ['John', 'Jane', 'Bob'] },
@@ -65,12 +67,20 @@ export class ExpenseListComponent {
     return amountOwedPerPersonObj;
   }
 
-  //edit will navigate to add expense form
+  /**
+   * Navigates to the add-expense page for editing an expense
+   * @param expense The Expanse to be edited
+   * @return void
+   */
   editExpense(expense: Expense): void {
     this.router.navigate(['/expense/add-expense']);
   }
 
-  //delete will remove the data 
+  /**
+   * Deletes an expense from the list of expenses
+   * @param expense The expanse to be deleted
+   * @return void
+   */
   deleteExpense(expense: Expense): void {
     const index = this.expenses.indexOf(expense);
     if (index !== -1) {
