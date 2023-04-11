@@ -53,7 +53,7 @@ export class ExpenseListComponent {
    * Calculates the amount owed by each person for a given expense
    * @param expense The expense for which to calculate the amount owed by each person
    * @returns An object containing the amount owed by each person
-*/
+  */
   getAmountOwedPerPerson(expense: Expense): { [key: string]: number } {
     const totalAmount = expense.amount;
     const numPeople = expense.people.length;
