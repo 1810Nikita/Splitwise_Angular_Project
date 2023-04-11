@@ -12,12 +12,14 @@ export class AddExpensesComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private router: Router) {};
 
-  ngOnInit() {
-    /* Create the expense form with required fields, including:
-     * - description: a required field for entering a description of the expense
-     * - amount: a required field for entering the amount of the expense
-     * - people: an array of people who shared the expense, which includes at least one person by default
-     */
+  /**
+   * Create the expense form with required fields, including:
+   * description: a required field for entering a description of the expense
+   * amount: a required field for entering the amount of the expense
+   * people: an array of people who shared the expense, which includes at least one person by default
+   * @return void
+   */
+  ngOnInit(): void {
     this.expenseForm = this.formBuilder.group({
       description: ['', Validators.required],
       amount: ['', Validators.required],
@@ -25,9 +27,11 @@ export class AddExpensesComponent implements OnInit {
     });
   }
 
-  /* This function creates a new person form group, which includes:
-   * - name: a required field for entering the name of the person
+  /**
+   * This function creates a new person form group, which includes:
+   * name: a required field for entering the name of the person
    * This is used when adding a new person to the array of people who shared the expense.
+   * @return FormGroup
    */
   createPerson(): FormGroup {
     return this.formBuilder.group({
@@ -35,31 +39,47 @@ export class AddExpensesComponent implements OnInit {
     });
   }
 
-  // Get the array of people from the expense form
+  /**
+   * Get the array of people from the expense form
+   * @param none
+   * @return FormArray
+   */
   get people(): FormArray {
     return this.expenseForm.get('people') as FormArray;
   }
 
-  // Add a new person to the array of people
+  /**
+   * Add a person to the array of people
+   * @param none
+   * @return void
+   */
   addPerson(): void {
     this.people.push(this.createPerson());
   }
 
-  // Remove a person from the array of people
+  /**
+   * Deletes the person from the array of people
+   * @param index the index to be deleted
+   * @return void
+   */
   removePerson(index: number): void {
     this.people.removeAt(index);
   }
 
-  /* This function is called when the expense form is submitted.
+  /** 
+   * This function is called when the expense form is submitted.
    * It handles form submission and navigates to the expense list page.
+   * @return void
    */
   onSubmit(): void {
     // handle form submission
     this.router.navigate(['expense/expense-list']);
   }
 
-  /* This function is called when the close button is clicked.
+  /**
+   * This function is called when the close button is clicked.
    * It navigates back to the dashboard page.
+   * @return void
    */
   closeForm(): void {
     this.router.navigate(['/dashboard']);

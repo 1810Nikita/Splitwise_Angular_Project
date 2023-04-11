@@ -44,13 +44,21 @@ export class SidenavComponent implements OnInit {
     this.screenWidth = window.innerWidth;
   }
 
-  /* Toggle the collapsed state of the sidenav and emit a SideNavToggle object */
+  /**
+   * Toggle the collapsed state of the sidenav and emit a SideNavToggle object
+   *  @param none
+   *  @return void
+  */
   toggleCollapse(): void {
     this.collapsed = !this.collapsed;
     this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth : this.screenWidth});
   }
 
-  /* Set the collapsed state of the sidenav to not collapsed and emit a SideNavToggle object */
+  /** 
+   * Set the collapsed state of the sidenav to not collapsed and emit a SideNavToggle object 
+   * @param none
+   * @return void
+   */
   closeSidenav(): void {
     this.collapsed = false;
     this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth : this.screenWidth});

@@ -24,7 +24,7 @@ export class FriendListComponent {
   /**
    * Handles the click event of the delete button and removes the corresponding friend from the friends array.
    * @param friend - The Friend object to be removed.
-   * @returns void 
+   * @return void 
    */
   onDelete(friend: Friend): void {
     const index = this.friends.indexOf(friend);
@@ -36,7 +36,7 @@ export class FriendListComponent {
   /**
    * Navigates to the settle up page for the selected friend.
    * @param friend - The Friend object for which the settle up page needs to be displayed.
-   * @returns void.
+   * @return void.
    */
   onSettleUp(friend: Friend): void {
     this.router.navigate(['/settle-up']);

@@ -47,21 +47,30 @@ export class AppComponent {
     });    
   }
 
-  //lifecycle hook that is called when the component is initialized
+  /**
+   * lifecycle hook that is called when the component is initialized
+   * @param none
+   * @return void
+   */
   ngOnInit(): void { 
   }
 
   /**
    * This method is called when the side navigation bar is toggled
-   * Set the screen width to the data passed in
-   * Set the isSideNavCollapsed property to the data passed in
+   * @param data An object that contains the screenWidth and collapsed properties
    */
   onToggleSidenav(data: SideNavToggle): void {
+    // Set the screen width to the data passed in
     this.screenWidth =data.screenWidth;
+    // Set the isSideNavCollapsed property to the data passed in
     this.isSideNavCollapsed = data.collapsed;  
   }
 
-  // This method checks whether the current URL starts with the given path
+  /**
+   * This method checks whether the current URL starts with the given path
+   * @param path A string that represents the path to check
+   * @returns A boolean value that indicates whether the current URL starts with the given path
+   */
   urlStartsWith(path : string) : boolean {
     return this.router.url.startsWith(path);
   }   
