@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 })
 export class AddExpensesComponent implements OnInit {
   expenseForm !: FormGroup;
-  
 
   constructor(private formBuilder: FormBuilder, private router: Router) {};
 
@@ -44,6 +43,7 @@ export class AddExpensesComponent implements OnInit {
     this.people.removeAt(index);
   }
 
+  //after submission it shows the expense list
   onSubmit(): void {
     // handle form submission
     this.router.navigate(['expense/expense-list']);

@@ -23,18 +23,19 @@
             <td>{{ expense.amount }}</td>
             <td>{{ expense.people.join(', ') }}</td>
             <td>
+              <!--buttons for edit and delete-->
               <button id="btn-edit" class="fas fa-pen" (click)="editExpense(expense)"></button>
               <button id="btn-delete" class="fa fa-trash" (click)="deleteExpense(expense)"></button>
             </td>
           </tr>
           <tr *ngIf="selectedExpenseIndices.includes(i)">
-              <td colspan="4">
-                <div>
-                  <p *ngFor="let person of expenseDetails[i].split('\n')">
-                    {{ person }} 
-                  </p>
-                </div>
-              </td>
+            <td colspan="4">
+              <div>
+                <p *ngFor="let person of expenseDetails[i].split('\n')">
+                  {{ person }} 
+                </p>
+              </div>
+            </td>
           </tr>             
         </ng-container>
       </tbody>

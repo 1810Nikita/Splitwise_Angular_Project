@@ -17,23 +17,13 @@ import { BodyComponent } from './body/body.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
     SidenavComponent,
-    BodyComponent,
-    
-  
-    
-    
-     
+    BodyComponent,   
   ],
 
   imports: [
@@ -49,8 +39,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    MatGridListModule
-    
+    MatGridListModule    
   ],
 
   providers: [],

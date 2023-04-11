@@ -5,9 +5,9 @@ import { filter } from 'rxjs';
 
 interface SideNavToggle {
   screenWidth: number;
-  collapsed: boolean;
-  
+  collapsed: boolean;  
 }
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,15 +17,14 @@ export class AppComponent {
   title = 'splitwise';
   // Declare showLoginButton property
   showLogin: boolean;
-  isSideNavCollapsed = false;
-    screenWidth = 0;
-    showsidenav: boolean;
-    currentRoute!: string;
+  isSideNavCollapsed: boolean;
+  screenWidth = 0;
+  showsidenav: boolean;
+  currentRoute!: string;
   
   constructor(private router: Router) {
 
-    
-  
+    this.isSideNavCollapsed = false;
     // Initialize showLoginButton property to true
     this.showLogin = true;
     this.router.events.subscribe((val) => {
@@ -35,36 +34,29 @@ export class AppComponent {
         this.showLogin = false;
       }
     });
-
     
     this.showsidenav = false;
     this.router.events.subscribe((val) => {
-      if (this.router.url === '/' || this.router.url == '/login-signup/register' || this.router.url == '/login-signup/login') {
+      if (this.router.url === '/' || this.router.url === '/login-signup/register' || this.router.url === '/login-signup/login') {
         this.showsidenav = false;
       } else {
         this.showsidenav = true;
       }
-    });
-
-    
-    
-    
+    });    
   }
 
   ngOnInit(): void { 
   }
 
-   onToggleSidenav(data: SideNavToggle): void {
+  onToggleSidenav(data: SideNavToggle): void {
     this.screenWidth =data.screenWidth;
-    this.isSideNavCollapsed = data.collapsed;
-    
+    this.isSideNavCollapsed = data.collapsed;  
   }
 
   urlStartsWith(path : string) : boolean {
-    return this.router.url.startsWith(path) ;
-  }
-   
-  }
+    return this.router.url.startsWith(path);
+  }   
+}
 
   
   

@@ -1,4 +1,5 @@
 <div class="app-body">
+    <!--Navbar-->
     <nav class="navbar sticky-top navbar-light" style="background-color:#17179a;">
         <a class="navbar-brand"><h1>Splitwise</h1></a>
         <div class="text-end"  id= "logout-button">
@@ -7,9 +8,9 @@
     </nav>  
     <div *ngIf="showLogin">
         <app-login></app-login>
-    </div>   
-    
-    
+    </div> 
+
+    <!--Sidenav-->
     <div class="sidenav">
         <app-sidenav (onToggleSidenav)="onToggleSidenav($event)" *ngIf="showsidenav"></app-sidenav>
         <app-body [collapsed]="isSideNavCollapsed"

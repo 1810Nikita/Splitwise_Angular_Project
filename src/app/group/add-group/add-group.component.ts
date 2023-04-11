@@ -58,18 +58,13 @@ export class AddGroupComponent implements OnInit {
     *This function is triggered when the user clicks the "Save" button to save the group data.
     *It logs the form value to the console and can be modified to call an API or service to save the group data.
   */
-    saveGroup(): void {
-      //console.log(this.groupForm.value);
-      // call API or service to save group data
-  
-      // Navigate to the group-list page
-      this.router.navigate(['/group-list']);
-    } 
+  saveGroup(): void {
+    // call API or service to save group data
+    // Navigate to the group-list page
+    this.router.navigate(['/group-list']);
+  } 
 
-    onclick(): void {
-      this.router.navigate(['group/group-list']);
-    }
- 
-
- 
+  onclick(): void {
+    this.router.navigate(['group/group-list']);
+  } 
 }

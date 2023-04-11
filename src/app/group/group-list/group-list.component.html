@@ -1,37 +1,46 @@
 <!-- This container holds the list of groups -->
 <div class="list">
-    <div class="container" style="overflow-x:auto;">
-        <div class="text-end">
-            <button class="btn btn-light" routerLink="/group/add-group">Add</button>
-        </div>
-        <h2>Group List</h2>
-      
-        <!-- This table displays the list of groups -->
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Members</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr >
-              <td>nikitaaa</td>
-              <td>ffghjgoirjoe</td>
-              <td>djfoifjvgofgoihohogho dfuhruthit</td>
-              <td>
-                <!--Button for add and edit-->
-                <div class="btn">
-                  <button id="btn-edit" class="fas fa-pen m-1" routerLink="/group/add-group"></button>
-                  <button id="btn-delete" class="fa fa-trash m-1"></button>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+  <div class="container" style="overflow-x:auto;">
+    <div class="text-end">
+      <button class="btn btn-light" routerLink="/group/add-group">Add</button>
     </div>
-      
+    <h2>Group List</h2>
     
+    <!-- This table displays the list of groups -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Members</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <!--table body-->
+      <tbody>
+        <!-- Generate table rows dynamically from the groups data -->
+        <tr *ngFor="let group of groups">
+          <td>{{ group.name }}</td>
+          <td>{{ group.type }}</td>
+          <!--only name of group member will shown-->
+          <td>
+            <ng-container *ngIf="group.members && group.members.length > 0; else noMembers">
+              {{ group.members[0].name }}
+              <span *ngFor="let member of group.members.slice(1)">
+                , {{ member.name }}
+              </span>
+            </ng-container>
+            <ng-template #noMembers>
+              No members
+            </ng-template>
+          </td>          
+          <td>
+            <button id="btn-edit" class="fa fa-dollar" (click)="onAddExpense()"></button>
+            <button id="btn-edit" class="fas fa-pen m-1" routerLink="/group/add-group"></button>
+            <button id="btn-delete" class="fa fa-trash m-1" (click)="onDelete(group)"></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>    
 </div>

@@ -10,7 +10,7 @@
         margin-bottom: 0;
         color: $primary-color;
         margin-left: 5px;
-      }
+    }
     //button
     .btn {
         margin-right: 2px;
@@ -30,12 +30,12 @@
         height: 400px;
     }
     
-  @media only screen and (max-width: 600px) {
-    .grid-container {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 5px;
-    }    
-}
+    @media only screen and (max-width: 600px) {
+        .grid-container {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 5px;
+        }    
+    }
 }
 
 //style for all transaction
@@ -45,8 +45,8 @@
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 2px;
 }
-
-  .grid-item1 {
+   
+.grid-item1 {
     background-color: #f8ecf6;
     padding: 20px;
     text-align: center;
@@ -54,7 +54,8 @@
     height: 80px;
 }
 
-  @media only screen and (max-width: 600px) {
+// on small screen change the layout of total balance section
+@media only screen and (max-width: 600px) {
     .grid-container1 {
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 5px;

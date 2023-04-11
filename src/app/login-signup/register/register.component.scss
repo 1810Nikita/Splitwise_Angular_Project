@@ -3,19 +3,18 @@
 .register {
   height: 89vh;
   overflow: auto;
-
 }
 
 @media (max-width: 600px) {
 .register {
     height: 90vh;
-}
+  }
 }
 
 @media (min-width:600px) and (max-width: 850px) {
 .register {
     height: 93.5vh;
-}
+  }
 }
 
 // Adjustments for small screens
@@ -30,19 +29,19 @@
 //Adjustments for medium screens
 @media (min-width: 576px) and (max-width: 992px) {
 .form-group {
-  width: 70%;
-  font-size: 28px;
-  padding: 32px;
-}
+    width: 70%;
+    font-size: 28px;
+    padding: 32px;
+  }
 }
 
 //Adjustments for large screens
 @media (min-width: 992px) and (max-width: 1200px) {
 .form-group {
-  width: 50%;
-  font-size: 32px;
-  padding: 40px;
-}
+    width: 50%;
+    font-size: 32px;
+    padding: 40px;
+  }
 }
 
 //Adjustments for extra-large screens
@@ -66,8 +65,8 @@
 }
 
 @media (max-width: 500px) {
-.register {
+  .register {
     margin-left: -70px;
     margin-bottom: 10px;
-}
+  }
 }

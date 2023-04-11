@@ -37,14 +37,13 @@ export class SidenavComponent implements OnInit {
 
   /* Set the initial screen width to the current window width */
   ngOnInit(): void {
-      this.screenWidth = window.innerWidth;
+    this.screenWidth = window.innerWidth;
   }
 
   /* Toggle the collapsed state of the sidenav and emit a SideNavToggle object */
   toggleCollapse(): void {
     this.collapsed = !this.collapsed;
     this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth : this.screenWidth});
-
   }
 
   /* Set the collapsed state of the sidenav to not collapsed and emit a SideNavToggle object */
@@ -52,7 +51,6 @@ export class SidenavComponent implements OnInit {
     this.collapsed = false;
     this.onToggleSidenav.emit({collapsed: this.collapsed, screenWidth : this.screenWidth});
   }
-
 }
 
 

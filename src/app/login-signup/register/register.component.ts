@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit{
 
   constructor ( private router : Router){
     this.signupUsers =[];
-   }
+  }
   
   /**
     * Initializes the component with an empty registration form.
@@ -64,7 +64,6 @@ export class RegisterComponent implements OnInit{
       confirmPassword:''
     }
     alert('registered successfully')
-
     this.router.navigateByUrl('/dashboard')
   }  
 }
