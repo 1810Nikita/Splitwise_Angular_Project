@@ -27,6 +27,7 @@
               <button id="btn-edit" class="fas fa-pen" (click)="editExpense(expense)"></button>
               <button id="btn-delete" class="fa fa-trash" (click)="deleteExpense(expense)"></button>
             </td>
+          <!--table of per person expanse-->
           </tr>
           <tr *ngIf="selectedExpenseIndices.includes(i)">
             <td colspan="4">
