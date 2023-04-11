@@ -30,7 +30,7 @@ export class ExpenseListComponent {
    * to the selected list and computes the amount owed per person, then updates
    * the expense details with this information.
  */
-  toggleDetails(index: number) {
+  toggleDetails(index: number): void {
     const isSelected = this.selectedExpenseIndices.includes(index);
     if (isSelected) {
       const selectedIndex = this.selectedExpenseIndices.indexOf(index);
@@ -66,12 +66,12 @@ export class ExpenseListComponent {
   }
 
   //edit will navigate to add expense form
-  editExpense(expense: Expense) {
+  editExpense(expense: Expense): void {
     this.router.navigate(['/expense/add-expense']);
   }
 
   //delete will remove the data 
-  deleteExpense(expense: Expense) {
+  deleteExpense(expense: Expense): void {
     const index = this.expenses.indexOf(expense);
     if (index !== -1) {
       this.expenses.splice(index, 1);

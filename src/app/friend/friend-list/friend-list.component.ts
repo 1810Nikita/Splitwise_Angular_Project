@@ -19,7 +19,7 @@ export class FriendListComponent {
   ];
 
   //Function to handle delete button click and remove the friend from the friends array
-  onDelete(friend: Friend) {
+  onDelete(friend: Friend): void {
     const index = this.friends.indexOf(friend);
     if (index !== -1) {
       this.friends.splice(index, 1);
@@ -27,7 +27,7 @@ export class FriendListComponent {
   }
 
   //go to settle up
-  onSettleUp(friend: Friend) {
+  onSettleUp(friend: Friend): void {
     this.router.navigate(['/settle-up']);
   }
 }

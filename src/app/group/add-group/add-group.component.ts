@@ -50,7 +50,7 @@ export class AddGroupComponent implements OnInit {
     }));
   }
 
-  removeGroupMember(index: number) {
+  removeGroupMember(index: number): void {
     this.groupMembers.removeAt(index);
   }
 

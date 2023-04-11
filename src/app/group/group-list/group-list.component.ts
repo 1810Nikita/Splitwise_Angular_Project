@@ -32,7 +32,7 @@ export class GroupListComponent {
     this.router.navigate(['/expense/add-expense']);
   }
 
-  onDelete(group: Group) {
+  onDelete(group: Group): void {
     //functionality for deleting a group
     const index = this.groups.indexOf(group);
     if (index !== -1) {
