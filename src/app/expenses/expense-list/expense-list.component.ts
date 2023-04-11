@@ -11,7 +11,7 @@ export class ExpenseListComponent {
 
   constructor(private router: Router) {}
 
-  //// Array of Expense objects representing the expenses to be displayed
+  // Array of Expense objects representing the expenses to be displayed
   expenses: Expense[] = [
     { description: 'Rent', amount: 1000, people: ['John', 'Jane'] },
     { description: 'Groceries', amount: 200, people: ['John', 'Jane', 'Bob'] },
