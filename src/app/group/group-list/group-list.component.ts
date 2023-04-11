@@ -13,7 +13,11 @@ export class GroupListComponent {
 
   constructor(private router: Router) {}
 
-  //group array
+  /**
+   * Define an array of group objects
+   * Define the first group object
+   * Define the members of the group
+   */
   groups: Group[] = [
     {
       id: 1,
@@ -28,7 +32,9 @@ export class GroupListComponent {
   ];  
 
   /**
-   * direct to settle up page
+   * direct to add expense page
+   * @param none
+   * @return void
    */
   onAddExpense(): void {
     this.router.navigate(['/expense/add-expense']);

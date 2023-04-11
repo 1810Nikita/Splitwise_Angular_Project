@@ -7,7 +7,7 @@
         <h3>Add Friend</h3>
         <div formArrayName="names">
           <h2>Enter Name and Email :</h2>
-          <div class="row" *ngFor="let name of names.controls; let i = index" [formGroupName]="i">
+          <div class="row mb-1" *ngFor="let name of names.controls; let i = index" [formGroupName]="i">
       
             <!--Name-->
             <div class="col-auto">
@@ -20,7 +20,7 @@
             </div>
           
             <!--Delete Button-->
-            <div class="col-auto">
+            <div class="col-auto mb-2">
               <button type="button" id="btn-delete" (click)="deleteNameInput(i)"><i class="fa fa-close"></i></button>
             </div>
           </div>
