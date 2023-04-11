@@ -35,7 +35,11 @@ export class SidenavComponent implements OnInit {
     }
   }
 
-  /* Set the initial screen width to the current window width */
+  /**
+   * Set the initial screen width to the current window width
+   * @param none
+   * @return void
+   */
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;
   }

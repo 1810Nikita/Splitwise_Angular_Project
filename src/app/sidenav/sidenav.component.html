@@ -2,9 +2,9 @@
 <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed':''">
   <div class="logo-container">
     <!--logo-->
-    <button class="logo" (click)="toggleCollapse()">S</button>
+    <button type="button" class="logo" (click)="toggleCollapse()">S</button>
     <!--close button for sidenav-->
-    <button class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
+    <button type="button" class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
       <i id="close"></i>
     </button>
   </div>
