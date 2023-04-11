@@ -50,6 +50,7 @@ export class AddGroupComponent implements OnInit {
     }));
   }
 
+  //remove the group member by delete button
   removeGroupMember(index: number): void {
     this.groupMembers.removeAt(index);
   }
