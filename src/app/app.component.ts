@@ -19,7 +19,7 @@ export class AppComponent {
   showLogin: boolean;
   isSideNavCollapsed: boolean;
   screenWidth = 0;
-  showsidenav: boolean;
+  showSideNav: boolean;
   currentRoute!: string;
   
   constructor(private router: Router) {
@@ -35,12 +35,12 @@ export class AppComponent {
       }
     });
     
-    this.showsidenav = false;
+    this.showSideNav = false;
     this.router.events.subscribe((val) => {
       if (this.router.url === '/' || this.router.url === '/login-signup/register' || this.router.url === '/login-signup/login') {
-        this.showsidenav = false;
+        this.showSideNav = false;
       } else {
-        this.showsidenav = true;
+        this.showSideNav = true;
       }
     });    
   }

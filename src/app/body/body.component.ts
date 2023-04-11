@@ -18,7 +18,7 @@ export class BodyComponent {
    * and returns the appropriate CSS class to be applied to the body element.
    *
    * @returns The CSS class to be applied to the body element.
- */
+  */
   getBodyClass(): string {
     let styleClass = '';
     /**

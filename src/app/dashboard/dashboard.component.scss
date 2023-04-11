@@ -62,6 +62,7 @@
     }
 }
 
+//on small screen adjust the height of dashboard 
 @media (max-width: 600px) {
     .dashboard {
         height: 90vh;
