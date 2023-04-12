@@ -1,13 +1,14 @@
+@import 'src/app/styles/layout/variable.scss';
 //sidenav style 
 .sidenav {
-  background: #f1e8f1;
+  background: $grid-color;
   transition: all 0.5s ease;
   position: fixed;
   z-index: 1;
   top: 50px;
   width: 80px;
   height: 100vh;
-  box-shadow: 1px 0 20px 0 #feeffe;
+  box-shadow: 1px 0 20px 0 $secondary-color;
 
   //logo style
   .logo-container {
@@ -17,13 +18,13 @@
     width: 100%;
 
     .logo {
-      background: #feeffe;
+      background: $secondary-color;
       text-align: center;
       width: 48px;
       min-width: 48px;
       border-radius: 5px;
       padding: 8px;
-      font-size: 24px;
+      font-size: $font-size;
       font-weight: 900;
       cursor: pointer;
       border: none;
@@ -32,9 +33,9 @@
 
     .logo-text {
       margin-left: 30px;
-      font-size: 24px;
+      font-size: $font-size;
       font-weight: 700;
-      color: rgb(124, 124, 227);
+      color: $primary-color;
     }
 
     .btn-close {
@@ -45,7 +46,7 @@
       border-radius: 50%;
       background-color: transparent;
       border: none;
-      color: #8a2be2;
+      color: $primary-color;
       margin-top: 30px;
     }
   }
@@ -73,7 +74,7 @@
       display: flex;
       align-items: center;
       height: 48px;
-      color: blue;
+      color: $primary-color;
       text-decoration: none;
       border-radius: 10px;
       transition: all 0.3s ease;
@@ -94,14 +95,14 @@
 
   .sidenav-nav-item:hover {
     .sidenav-nav-link {
-      background-color: blue;
-      color: #f1e8f1;
+      background-color: $primary-color;
+      color: $secondary-color;
     }
   }
 }
 
 .active {
-  background-color: #feeffe;
+  background-color: $secondary-color;
 }
 
 @media screen and (max-height: 800px) {
