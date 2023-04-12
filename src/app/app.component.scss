@@ -1,1 +1,48 @@
+@import 'src/app/styles/layout/variable.scss';
+/* Adjust logo size for smaller screens */
+.sidenav {
+  background: $background-color ;
+  overflow: hidden;
+}
+.navbar-brand {
+  font-size: 32px; /* changed from 2rem to 32px */
+  margin-bottom: 0;
+  color: #ffff;
+}
+
+@media (max-width: 767px) {
+  .logo {
+    font-size: 24px; /* changed from 1.5rem to 24px */
+  }
+}
+
+/* Adjust menu icon size for smaller screens */
+.menu_icon {
+  font-size: 24px; /* changed from 1.5rem to 24px */
+}
+
+@media (max-width: 767px) {
+  .menu_icon {
+    font-size: 20px;
+  }
+}
+
+/* Adjust menu button size for smaller screens */
+.menu button {
+  font-size: 14px;
+  padding: 3px 6px;
+}
+
+@media (max-width: 767px) {
+  .menu button {
+    font-size: 12px;
+    padding: 2px 4px;
+  }
+}
+
+#logout-button {
+  margin-right: 15px; /* adjust the value as needed */
+}
+
+
 

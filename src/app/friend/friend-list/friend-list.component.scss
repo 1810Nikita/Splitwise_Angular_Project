@@ -1,0 +1,25 @@
+@import 'src/app/styles/layout/variable.scss';
+
+//list style
+.expense-list {
+  height: 89vh;
+  overflow: auto;
+}
+
+//heading style
+h2 {
+  color: $tertiary-color;
+  margin: 15px;
+}
+
+//table style
+table {
+  color: black;
+  border: 2px solid $primary-color;
+  background-color: $tertiary-color;
+}
+
+
+
+
+

@@ -1,0 +1,36 @@
+<div class="friend-list" >
+    <div class="container" style="overflow-x:auto;">
+        <div class="text-end">
+            <button class="btn btn-light" routerLink="/friend/add-friend">Add</button>
+        </div>
+        <h2>friend list</h2>
+        <!--content of table-->
+        <table class="table">
+            <!--Table head-->
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>You owe</th>
+                    <th>Friend owe</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            
+            <!--table body-->
+            <tbody>
+                <tr *ngFor="let friend of friends">
+                    <td>{{ friend.name }}</td>
+                    <td>{{ friend.email }}</td>
+                    <td></td>
+                    <td></td>
+                    <!--Button for delete-->
+                    <td>
+                        <button id="btn-edit" class="fa fa-paypal" (click)="onSettleUp(friend)"></button>
+                        <button id="btn-delete" class="fa fa-trash" (click)="onDelete(friend)"></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -5,6 +5,7 @@ import { ExpensesRoutingModule } from './expenses-routing.module';
 import { ExpensesComponent } from './expenses.component';
 import { AddExpensesComponent } from './add-expenses/add-expenses.component';
 import { ExpenseListComponent } from './expense-list/expense-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ExpenseListComponent } from './expense-list/expense-list.component';
   ],
   imports: [
     CommonModule,
-    ExpensesRoutingModule
+    ExpensesRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class ExpensesModule { }

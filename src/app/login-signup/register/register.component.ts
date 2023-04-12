@@ -1,14 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators , FormControl} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-
-// an interface that contains the properties of username ,name, confirm password and password.
-interface User {
-  username: string,
-  name: string,
-  password: string,
-  confirmPassword: string
-}
+import { Router } from '@angular/router';
+import { User } from 'src/app/model/loginRegister.model';
 
 @Component({
   selector: 'app-register',
@@ -26,7 +20,7 @@ export class RegisterComponent implements OnInit{
     confirmPassword:''
   }
 
-  constructor (){
+  constructor ( private router : Router){
     this.signupUsers =[];
    }
   
@@ -70,5 +64,7 @@ export class RegisterComponent implements OnInit{
       confirmPassword:''
     }
     alert('registered successfully')
+
+    this.router.navigateByUrl('/dashboard')
   }  
 }

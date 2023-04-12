@@ -1,23 +1,42 @@
-p {
-    margin-top: 10px;
-    text-align: center;
-}
-form {
-    border: none;
-    box-shadow: none;
-    width: 800px;
-    margin-top: 25px;
-}
-.member-field {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 20px;
-    margin-right: 10px; /* add some spacing between member fields and delete button */
+@import 'src/app/styles/layout/variable.scss';
+
+//body style
+.group {
+    height: 89vh;
+    overflow: auto;
 }
 
-.remove {
-    all: unset;
-    margin-left: 20px;
-    
+//Adjustments for small screens
+@media (max-width: 576px) {
+    .form-group {
+        width: 90%;
+        
+    }
 }
+
+//Adjustments for medium screens
+@media (min-width: 576px) and (max-width: 992px) {
+    .form-group {
+        width: 70%;
+        
+    }
+}
+
+//Adjustments for large screens
+@media (min-width: 992px) and (max-width: 1200px) {
+    .form-group {
+        width: 50%;
+        
+    }
+}
+
+//Adjustments for extra-large screens
+@media (min-width: 1200px) {
+    .form-group {
+        width: 30%;
+        
+    }
+}
+
+
+

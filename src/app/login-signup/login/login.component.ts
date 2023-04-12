@@ -3,12 +3,8 @@ import { Component ,OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators , FormControl} from '@angular/forms';
 import { ActivatedRoute,Router } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { User } from 'src/app/model/loginRegister.model';
 
-// an interface that contains the properties of username and password.
-interface User {
-  username: string;
-  password: string;
-}
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -48,6 +44,7 @@ export class LoginComponent implements OnInit{
     } else{
       alert('user not found please Register');
     }
+    this.router.navigateByUrl('/dashboard')
   }
   
   /**

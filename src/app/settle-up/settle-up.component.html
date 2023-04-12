@@ -1,0 +1,50 @@
+<!--settle up form-->
+<div class="settle-up">
+    <div class="container">
+        <!--row-->
+        <div  class="row justify-content-center">
+            <!--column-->
+            <form class="form-group col-md-4 col-md-offset-5 align-center " [formGroup]="settleUpForm" (ngSubmit)="onSubmit()">
+                <h3>Settle up</h3>
+                <!--button for cash payment-->
+                <div class="d-grid gap-2 mt-2">
+                    <button class="btn btn-success" type="button" (click)="toggleForm()">Record a cash payment</button>                    
+                </div>
+                <!--If the transaction is in cash method-->
+                <div *ngIf="showSettleUpForm">
+                    <div>
+                        <div class="paid-amt m-2">
+                            <button type="button" class="btn btn-outline-info">You</button>Paid
+                            <button type="button" class="btn btn-outline-success">Friend</button>
+                        </div>
+                        <!--description-->
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Description:</label>
+                            <input type="text" class="form-control" formControlName="description">    
+                        </div>
+                        <!--Amount-->
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Amount:</label>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">$</span>
+                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" formControlName="amount">
+                            </div>
+                        </div>
+                    </div>    
+                </div>
+                <!--option for paypal transaction-->
+                <div *ngIf="!showSettleUpForm">
+                    <div class="d-grid gap-2 mt-2">
+                        <button class="btn btn-outline-secondary" type="button"><i class="fa fa-paypal"> Paypal</i></button>                    
+                    </div>
+                </div>
+  
+                <!--button-->
+                <div class="form-buttons">
+                    <button class="btn btn-secondary m-1" type="button" (click)="closeForm()">Cancel</button>
+                    <button class="btn btn-primary m-1" type="submit">Save</button>
+                </div>
+            </form>
+        </div>  
+    </div>
+</div>

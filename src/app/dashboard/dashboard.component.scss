@@ -1,0 +1,94 @@
+@import 'src/app/styles/layout/variable.scss';
+
+//styles for the dashboard section.
+.dashboard {
+    height: 89vh;
+    overflow: auto;
+
+    //heading
+    .navbar-brand {
+        margin-bottom: 0;
+        color: $primary-color;
+        margin-left: 5px;
+      }
+    //button
+    .btn {
+        margin-right: 2px;
+    }
+
+    //container style for owe and owed section
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        padding: 10px;
+    }
+
+    .grid-item {
+        border: 1px solid #0000ff;
+        padding: 20px;
+        background-color: #f0f8ff;
+        height: 400px;
+    }
+    
+  @media only screen and (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 5px;
+    }    
+}
+}
+
+//style for all transaction
+.grid-container1 {
+    display: grid;
+    margin:2px ;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 2px;
+}
+
+  .grid-item1 {
+    background-color: #f8ecf6;
+    padding: 20px;
+    text-align: center;
+    font-size: 15px;
+    height: 80px;
+}
+
+  @media only screen and (max-width: 600px) {
+    .grid-container1 {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .dashboard {
+        height: 90vh;
+    }
+}
+
+@media (min-width:600px) and (max-width: 850px) {
+    .dashboard {
+        height: 93.5vh;
+    }
+}
+
+@media (max-width: 600px) {
+    .dashboard-btn {
+        margin: 15px;
+    }
+}
+
+@media (min-width:600px) and (max-width: 800px) {
+    .dashboard-btn {
+        margin: 15px;
+    }
+}
+
+@media (max-width: 670px) {
+    #navbar-button {
+        font-size: 10px;
+        padding: 4px 8px;
+    }
+}
+
