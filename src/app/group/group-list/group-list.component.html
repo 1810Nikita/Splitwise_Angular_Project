@@ -2,7 +2,7 @@
 <div class="list">
   <div class="list-container">
     <div class="text-end m-2">
-      <button type="button" class="btn btn-light" routerLink="/group/add-group">Add</button>
+      <button type="button" class="btn btn-light" id="btn-add" routerLink="/group/add-group">Add</button>
     </div>
     <h2>Group List</h2>
     
@@ -13,6 +13,7 @@
           <th>Name</th>
           <th>Type</th>
           <th>Members</th>
+          <th>Group balance</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -37,7 +38,8 @@
             <ng-template #noMembers>
               No members
             </ng-template>
-          </td>          
+          </td> 
+          <td>0</td>         
           <td>
             <!--button for add edit and delete-->
             <button type="button" id="btn-edit" class="fa fa-dollar" (click)="onAddExpense()"></button>

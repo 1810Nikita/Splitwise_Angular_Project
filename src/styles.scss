@@ -25,6 +25,10 @@ form {
   border-radius: 5px;
 }
 
+#btn {
+  font-size: $font-size;
+}
+
 //lable styling
 label {
   font-size: $font-size;
@@ -51,12 +55,17 @@ label {
   size: 12px
 }
 
-#btn {
-  font-size: $font-size;
+#btn-save, #btn-cancle, #btn-add {
+  font-size: $button-font;
+  width: 120px;
 }
 
 h4 {
   color: $h4-color;
+}
+
+h5 {
+  color: $h5-color;
 }
 
 //heading style
@@ -82,13 +91,25 @@ h2 {
   margin: 10px;
 }
 
+#name, #email {
+  border: 1px solid $primary-color;
+  border-radius: 3px;
+  padding: 2px;
+}
+
 //form style
 .detail-form {
   display: flex;
   justify-content: center;
   height: 89vh;
   overflow: auto;
-} 
+}
+
+//alert box
+#alert {
+  border: 2px solid $primary-color;
+  border-radius: 5px;
+}
 
 //on small screen set padding
 @media (max-width: 576px) {

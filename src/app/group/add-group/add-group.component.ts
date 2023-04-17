@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, FormControl ,Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Friend } from 'src/app/model/friend.model';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
 
 @Component({
   selector: 'app-add-group',
@@ -12,10 +15,18 @@ export class AddGroupComponent implements OnInit {
   groupMembers!: FormArray;
   groupType: string[] = ['Home', 'Trip', 'Couple', 'Other'];
   showGroupMembersForm: boolean;
+  Friends = [
+    { name: 'John', email: 'john@example.com' },
+    { name: 'Jane', email: 'jane@example.com' },
+    { name: 'Bob', email: 'Bob@example.com' },
+  ];
+  myControl = new FormControl('');
+  filteredOptions!: Observable<{ name: string, email: string }[]>;
 
   constructor(private formBuilder: FormBuilder, private router: Router) {
     this.showGroupMembersForm = false;
   }
+
 
   /**
    * Initializes the component with an empty Group form.
@@ -39,7 +50,25 @@ export class AddGroupComponent implements OnInit {
     this.groupForm.get('groupName')?.valueChanges.subscribe(groupName => {
       this.showGroupMembersForm = (groupName && groupName.length > 0);
     });
+
+    //Sets up an observable to filter the options based on user input in the form control.
+    this.filteredOptions = this.myControl.valueChanges
+    .pipe(
+      startWith(''),
+      map(value => this._filter(value || ''))
+    );
+
   }
+
+  /**
+   * Filters the list of friends based on the given input value.
+   * @param value - The input value to filter the list of friends
+   * @returns An array of filtered friends
+   */
+  private _filter(value: string): { name: string, email: string }[] {
+    const filterValue = value.toLowerCase();
+    return this.Friends.filter(friend => friend.name.toLowerCase().includes(filterValue));
+  }  
 
   /**
    * Handles the add group member button.
@@ -55,7 +84,7 @@ export class AddGroupComponent implements OnInit {
       email: ''
     }));
   }
-
+ 
   /**
    * Handles the delete group member button.
    * 
@@ -88,5 +117,24 @@ export class AddGroupComponent implements OnInit {
    */
   onclick(): void {
     this.router.navigate(['group/group-list']);
-  } 
+  }
+
+  /**
+   * Returns the name of a Friend object.
+   * @param friend - The Friend object whose name is to be returned.
+   * @returns The name of the Friend object as a string.
+   */
+  displayFn(friend?: Friend): string {
+    return friend ? friend.name : '';
+  }
+
+  /**
+   * Sets the value of the email input field when a friend is selected from the dropdown list.
+   * @param selectedFriend - The Friend object that was selected from the dropdown list.
+   * @param emailInput - The HTML input element for the email field.
+   */
+  onFriendSelectionChange(selectedFriend: any, emailInput: any) {
+    emailInput.value = selectedFriend.email;
+  }
+ 
 }

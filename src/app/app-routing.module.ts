@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SettleUpComponent } from './settle-up/settle-up.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,8 @@ const routes: Routes = [
   .then(mod=> mod.FriendModule)},
   
   {path: 'dashboard', component:DashboardComponent},
+
+  {path:'settle-up', component:SettleUpComponent}
 
  
 ];

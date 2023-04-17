@@ -2,7 +2,7 @@
 <div class="list">
   <div class="list-container">
     <div class="text-end m-2">
-      <button type="button" class="btn btn-light" routerLink="/expense/add-expense">Add</button>
+      <button type="button" class="btn btn-light" id="btn-add" routerLink="/expense/add-expense">Add</button>
     </div>
     <!--Heading-->
     <h2>Expense list</h2>
@@ -24,6 +24,7 @@
             <td>{{ expense.people.join(', ') }}</td>
             <td>
               <!--buttons for edit and delete-->
+              <button type="button" id="btn-edit" class="fas fa-handshake" routerLink="/settle-up" ></button>
               <button type="button" id="btn-edit" class="fas fa-pen" (click)="editExpense(expense)"></button>
               <button type="button" id="btn-delete" class="fa fa-trash" (click)="deleteExpense(expense)"></button>
             </td>

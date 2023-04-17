@@ -1,11 +1,9 @@
-<div class="group">
-  <p class="text-center">START A NEW GROUP</p>
-
+<div class="detail-form">
   <!-- This container holds the form that allows users to create a new group -->
   <div class="container">
     <!-- This form group contains the group name and group members form array -->
     <div class="row justify-content-center">
-      <form [formGroup]="groupForm" (ngSubmit)="saveGroup()">
+      <form class="form-group col-md-5 col-md-offset-5 align-center" [formGroup]="groupForm" (ngSubmit)="saveGroup()">
 
         <!-- This section allows users to enter the group name -->
         <div class="mb-1">
@@ -15,52 +13,56 @@
         <hr class="hr hr-blurry"/>
     
         <!-- This section only becomes visible when a group name has been entered -->
-        <div *ngIf="showGroupMembersForm">
-          <h2 class="mb-1">GROUP MEMBER</h2>
-    
-          <!-- This form array holds the group member form groups -->
-          <div formArrayName="groupMembers">
-    
-            <!-- This section shows the group member form groups -->
-            <div class="row" *ngFor="let member of groupMembers.controls; let i = index" [formGroupName]="i">
-    
-              <!--Name-->
-              <div class="col-auto">
-                <input type="text" formControlName="name" placeholder="Name"  class="mb-2">
+        <div class="text-start">
+          <div *ngIf="showGroupMembersForm">
+            <p><b>Add Group Member</b></p>
+      
+            <!-- This form array holds the group member form groups -->
+            <div formArrayName="groupMembers">
+      
+              <!-- This section shows the group member form groups -->
+              <div class="row" *ngFor="let member of groupMembers.controls; let i = index" [formGroupName]="i">
+      
+                <!--Name-->
+                <div class="col-auto">
+                  <input type="text" id="name"  placeholder="Name" [formControl]="myControl" [matAutocomplete]="auto" class="mb-2" matInput >
+                  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="onFriendSelectionChange($event.option.value, emailInput)">
+                    <mat-option *ngFor="let friend of filteredOptions | async" [value]="friend">
+                      {{ friend.name }}
+                    </mat-option>
+                  </mat-autocomplete>
+                </div>
+  
+                <!--Email-->
+                <div class="col-auto mb-2">
+                  <input type="text" id="email"  placeholder="Email" #emailInput>
+                </div>
+                
+                
+                <!--Delete Button-->
+                <div class="col-auto">
+                  <button type="button" id="btn-delete" (click)="removeGroupMember(i)"><i class="fa fa-close"></i></button>
+                </div>
               </div>
-              
-              <!--Email-->
-              <div class="col-auto mb-2">
-                <input type="email" formControlName="email" placeholder="Email">
-              </div>
-              
-              <!--Delete Button-->
-              <div class="col-auto">
-                <button type="button" id="btn-delete" (click)="removeGroupMember(i)"><i class="fa fa-close"></i></button>
-              </div>
+  
+              <!-- This button allows users to add more group members -->
+              <button type="button" id="btn-edit"  class="add" (click)="addGroupMember()">+Add a person</button>
             </div>
-          
-            <!-- This button allows users to add more group members -->
-            <button type="button" id="btn-edit"  class="add" (click)="addGroupMember()">+Add a person</button>
+            <hr class="hr hr-blurry" />
+      
+            <!--Group type-->
+            <div>
+              <p><b>Group type</b></p>
+              <select formControlName="type">
+                <option *ngFor="let type of groupType" [value]="type">{{type}}</option>
+              </select>
+            </div>
+            <hr class="hr hr-blurry" />
           </div>
-          <hr class="hr hr-blurry" />
-    
-          <!--Group type-->
-          <div>
-            <h4>GROUP TYPE</h4>
-            <select formControlName="type">
-              <option *ngFor="let type of groupType" [value]="type">{{type}}</option>
-            </select>
-          </div>
-          <hr class="hr hr-blurry" />
-          <div class="form-check form-switch m-1">
-            <label class="form-check-label" for="flexSwitchCheckDefault">Simplify group debts?</label>
-            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-          </div>
+          <!--This button allows user to save the details-->
+          <button type="submit" id="btn-save" class="btn btn-primary" (click)="onclick()">Save</button>       
         </div>
-        <!--This button allows user to save the details-->
-        <button type="submit" id="btn" class="btn btn-primary" (click)="onclick()">Save</button>       
-      </form>
+        </form>
     </div>
   </div>
 </div>

@@ -10,7 +10,7 @@
         <!--form for person-->
         <div class="form-group" formArrayName="people">
           <!-- Loop through each person in the people form array -->
-          <div class="row" *ngFor="let person of people.controls; let i=index" [formGroupName]="i">
+          <div class="row mb-3" *ngFor="let person of people.controls; let i=index" [formGroupName]="i">
             <div class="col">
               <!-- Display a label and input field for the person's name -->
               <label>Person {{ i + 1 }}:</label>
@@ -24,7 +24,7 @@
           <!-- Display a button to add a new person to the array -->
           <div class="row">
             <div class="col-auto">
-              <button type="button"  class="btn btn-success m-1" (click)="addPerson()">Add Person</button>
+              <button type="button"  id="add-person" class="btn btn-success mb-3" (click)="addPerson()">Add Person</button>
             </div>
           </div>
         </div>
@@ -46,8 +46,8 @@
 
         <!--button-->
         <div class="form-buttons">
-          <button class="btn btn-secondary m-1" type="button" (click)="closeForm()">Cancel</button>
-          <button class="btn btn-primary m-1" type="submit">Save</button>
+          <button class="btn btn-secondary m-1" type="button" id="btn-cancle" (click)="closeForm()">Cancel</button>
+          <button class="btn btn-primary m-1" type="submit" id="btn-save">Save</button>
         </div>
       </form>
     </div>

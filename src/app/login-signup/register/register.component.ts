@@ -20,6 +20,8 @@ export class RegisterComponent implements OnInit{
     confirmPassword:''
   }
 
+  alertSuccess: boolean | undefined;
+
   constructor ( private router : Router){
     this.signupUsers =[];
   }
@@ -36,6 +38,8 @@ export class RegisterComponent implements OnInit{
       password: new FormControl(''),
       confirmPassword: new FormControl('')
     });
+
+    this.alertSuccess = false;
   }
   /**
    * Handles the 'Register' button click event.
@@ -63,7 +67,16 @@ export class RegisterComponent implements OnInit{
       password: '',
       confirmPassword:''
     }
-    alert('registered successfully')
-    this.router.navigateByUrl('/dashboard')
-  }  
+    this.alertSuccess=true;
+    
+  }
+
+  /**
+   * this function works for closing the alert
+   * and after closing the alert it will redirect to the dashboard
+   */
+  closeAlertSuccess(): void {
+    this.alertSuccess = false;
+    this.router.navigateByUrl('/dashboard');
+  }
 }

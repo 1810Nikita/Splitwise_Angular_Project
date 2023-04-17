@@ -16,14 +16,18 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { BodyComponent } from './body/body.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { SettleUpComponent } from './settle-up/settle-up.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     DashboardComponent,
     SidenavComponent,
-    BodyComponent,   
+    BodyComponent,
+    SettleUpComponent,
+    LoginComponent  
   ],
 
   imports: [
@@ -39,7 +43,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    MatGridListModule    
+    MatGridListModule,
+    MatDialogModule
   ],
 
   providers: [],

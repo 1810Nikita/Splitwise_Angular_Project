@@ -1,4 +1,21 @@
 <div class="register">
+    <!--Alert for sucessfull Registration-->
+    <div class="fixed-top container">
+        <div class="row justify-content-center">
+          <div class="col-md-5" >
+            <div class="card mb-1" *ngIf="alertSuccess">
+              <div class="card-body" id="alert">
+                <h5 class="card-title">Success!</h5>
+                <p class="card-text">You have successfully registered yourself to Splitwise.</p>
+                <button type="button" class="btn btn-outline-primary" id="close-alert" (click)="closeAlertSuccess()">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            </div>           
+          </div>
+        </div>
+    </div>
+
     <div class="container">
         <!--register component-->
         <div  class="row justify-content-center">
@@ -14,7 +31,7 @@
                 <!--Add Name-->
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">Name</label>
-                    <input type="name" class="form-control"  id="name" formControlName="name" placeholder="Enter Name">
+                    <input type="name" class="form-control"  formControlName="name" placeholder="Enter Name">
                 </div>
 
                 <!--Add password-->
@@ -35,7 +52,7 @@
                 </div>
 
                 <div class="mt-2">Already have an account 
-                    <a routerLink="/"> Log in</a>
+                    <a routerLink="/login-signup/login"> Log in</a>
                 </div>
             </form>
         </div>

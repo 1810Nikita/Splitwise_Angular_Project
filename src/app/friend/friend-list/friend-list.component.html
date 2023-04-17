@@ -2,7 +2,7 @@
 <div class="list" >
     <div class="list-container">
         <div class="text-end m-2">
-            <button type="button" class="btn btn-light" routerLink="/friend/add-friend">Add</button>
+            <button type="button" class="btn btn-light" id="btn-add" routerLink="/friend/add-friend">Add</button>
         </div>
         <h2>friend list</h2>
         <!--content of table-->
@@ -24,11 +24,11 @@
                 <tr *ngFor="let friend of friends">
                     <td>{{ friend.name }}</td>
                     <td>{{ friend.email }}</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{0}}</td>
+                    <td>{{0}}</td>
                     <!--Button for delete-->
                     <td>
-                        <button type="button" id="btn-edit" class="fa fa-paypal" (click)="onSettleUp(friend)"></button>
+                        <button type="button" id="btn-edit" class="fas fa-handshake" (click)="onSettleUp(friend)"></button>
                         <button type="button" id="btn-delete" class="fa fa-trash" (click)="onDelete(friend)"></button>
                     </td>
                 </tr>

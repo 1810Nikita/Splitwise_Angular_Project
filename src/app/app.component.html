@@ -2,14 +2,14 @@
     <!--Navbar-->
     <nav class="navbar sticky-top navbar-light" id="navbar">
         <!--Heading-->
-        <a class="navbar-brand"><h1>Splitwise</h1></a>
+        <a class="navbar-brand"><h1 class="ms-3">Splitwise</h1></a>
         <!--logout button-->
         <div class="text-end"  id= "logout-button">
-            <button type="button" class="btn btn-outline-light btn-sm" *ngIf="showSideNav" routerLink="/">Logout</button>
+            <button type="button" class="btn btn-outline-light" id="btn-cancle" *ngIf="showSideNav" routerLink="/">Logout</button>
         </div>
     </nav>
     <!--login component-->  
-    <div *ngIf="showLogin">
+    <div class="login-component" *ngIf="showLogin">
         <app-login></app-login>
     </div> 
 
