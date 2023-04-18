@@ -1,1 +1,50 @@
+@import 'src/app/styles/layout/variable.scss';
+//side nav
+.sidenav {
+  background: $background-color ;
+  overflow: hidden;
+}
+.navbar-brand {
+  font-size: $navbar-font;
+  margin-bottom: 0;
+  color: $tertiary-color;
+}
 
+#navbar {
+  background-color: $navbar-color;
+}
+
+#logout-button {
+  margin-right: 15px; 
+}
+
+.menu-button {
+  font-size: 14px;
+  padding: 3px 6px;
+}
+
+/* Adjust menu icon size for smaller screens */
+.menu-icon {
+  font-size: $icon-size; 
+}
+
+@media (max-width: 767px) {
+  .menu-icon {
+    font-size: $font-size;
+  }
+  .logo {
+    font-size: $icon-size; 
+  }
+  .menu-button {
+    font-size: 12px;
+    padding: 2px 4px;
+  }
+}
+
+@media (max-width: 600px) {
+  .login-component {
+    margin-left: 70px;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+}

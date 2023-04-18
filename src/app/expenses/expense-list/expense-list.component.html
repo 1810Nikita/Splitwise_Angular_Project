@@ -1,1 +1,49 @@
-<p>expense-list works!</p>
+<!-- This container holds the list of groups -->
+<div class="list">
+  <div class="list-container">
+    <div class="text-end m-2">
+      <button type="button" class="btn btn-light" id="btn-add" routerLink="/expense/add-expense">Add</button>
+    </div>
+    <!--Heading-->
+    <h2>Expense list</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>People</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <!--table body-->
+      <tbody>
+        <ng-container *ngFor="let expense of expenses; let i = index">
+          <tr (click)="toggleDetails(i)">
+            <td>{{ expense.description }}</td>
+            <td>{{ expense.amount }}</td>
+            <td>{{ expense.people.join(', ') }}</td>
+            <td>
+              <!--buttons for edit and delete-->
+              <button type="button" id="btn-edit" class="fas fa-handshake" routerLink="/settle-up" ></button>
+              <button type="button" id="btn-edit" class="fas fa-pen" (click)="editExpense(expense)"></button>
+              <button type="button" id="btn-delete" class="fa fa-trash" (click)="deleteExpense(expense)"></button>
+            </td>
+          <!--table of per person expanse-->
+          </tr>
+          <!-- Display a row for each expense that has been selected -->
+          <tr *ngIf="selectedExpenseIndices.includes(i)">
+            <!-- Span all four columns of the table -->
+            <td colspan="4">
+              <!-- Display the expense details as a list of paragraphs -->
+              <div>
+                <p *ngFor="let person of expenseDetails[i].split('\n')">
+                  {{ person }} 
+                </p>
+              </div>
+            </td>
+          </tr>             
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

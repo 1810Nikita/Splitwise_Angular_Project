@@ -7,7 +7,7 @@ import { GroupListComponent } from './group-list/group-list.component';
 const routes: Routes = [
   {path:'add-group', component:AddGroupComponent},
   {path:'group-list', component:GroupListComponent},
-  { path: '',component: GroupComponent}
+  { path: '',component: AddGroupComponent, pathMatch:'full'}
 ];
 
 @NgModule({

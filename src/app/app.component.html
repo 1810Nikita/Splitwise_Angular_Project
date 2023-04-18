@@ -1,8 +1,23 @@
-<!--First page of splitwise application where you can find option for login to your account and use aplication-->
-<div class="text-center">
-    <!--Heading-->
-    <h1>Welcome to Splitwise</h1>
-    <!--Button for routing to the login page-->
-    <button type="button" class="login" *ngIf="showLoginButton" routerLink="/login-signup/login"><i class='fas fa-user-graduate' id="graduate">Login to your Account</i></button>
+<div class="app-body">
+    <!--Navbar-->
+    <nav class="navbar sticky-top navbar-light" id="navbar">
+        <!--Heading-->
+        <a class="navbar-brand"><h1 class="ms-3">Splitwise</h1></a>
+        <!--logout button-->
+        <div class="text-end"  id= "logout-button">
+            <button type="button" class="btn btn-outline-light" id="btn-cancle" *ngIf="showSideNav" routerLink="/">Logout</button>
+        </div>
+    </nav>
+    <!--login component-->  
+    <div class="login-component" *ngIf="showLogin">
+        <app-login></app-login>
+    </div> 
+
+    <!--Sidenav-->
+    <div class="sidenav">
+        <app-sidenav (onToggleSidenav)="onToggleSidenav($event)" *ngIf="showSideNav"></app-sidenav>
+        <app-body [collapsed]="isSideNavCollapsed"
+        [screenWidth]="screenWidth"></app-body>
+    </div>
 </div>
-<router-outlet></router-outlet>
+

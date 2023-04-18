@@ -1,0 +1,99 @@
+@import 'src/app/styles/layout/variable.scss';
+
+//styles for the dashboard section.
+.dashboard {
+    height: 89vh;
+    overflow: auto;
+}
+
+//heading
+.navbar-brand {
+    margin-bottom: 0;
+    color: $primary-color;
+    margin-left: 5px;
+}
+//button
+.btn {
+    margin-right: 2px;
+    width: 120px;
+    padding: 8px;
+}
+
+.navbar {
+    background-color: $secondary-color;
+    margin: 5px;
+}
+
+.grid-item-owe-owed {
+    background-color: $secondary-color;
+    height: 350px;
+    text-align: center;
+}
+
+.list-owe-owed {
+    text-align: left;
+}
+
+//style for all transaction
+.grid-container-all-expense {
+    display: grid;
+    margin:5px ;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 2px;
+}
+//container style for owe owed
+.grid-container-owe-owed {
+    display: grid;
+    margin: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    text-align: center;
+    gap: 3px;
+}
+
+// style for list of all expense
+.grid-item-all-expense {
+    background-color: $grid-color;
+    padding: 20px;
+    text-align: center;
+    font-size: 15px;
+    height: 80px;
+}
+
+// on small screen change the layout of total balance section
+@media only screen and (max-width: 600px) {
+    .grid-container-all-expense {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 5px;
+    }
+    .grid-container-owe-owed {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 5px;
+    }   
+}
+
+//on small screen adjust the height of dashboard 
+@media (max-width: 600px) {
+    .dashboard {
+        height: 90vh;
+    }
+    .dashboard-btn {
+        margin: 15px;
+    }
+}
+
+@media (min-width:600px) and (max-width: 850px) {
+    .dashboard {
+        height: 93.5vh;
+    }
+    .dashboard-btn {
+        margin: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .btn {
+      width: 100px;
+      font-size: 12px;
+      padding: 5px 10px;
+    }
+}

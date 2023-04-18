@@ -1,0 +1,28 @@
+<!--side nav logo and cross button component-->
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed':''">
+  <div class="logo-container">
+    <!--logo-->
+    <button type="button" class="logo" (click)="toggleCollapse()">S</button>
+    <!--close button for sidenav-->
+    <button type="button" class="btn-close" *ngIf="collapsed" (click)="closeSidenav()">
+      <i id="close"></i>
+    </button>
+  </div>
+  <!--Side navbar items-->
+  <div>
+    <ul class="sidenav-nav">
+      <li class="sidenav-nav-item" *ngFor="let data of navdata">
+        <!--data of sidenav-->
+        <a  class="sidenav-nav-link" [routerLink]="[data.routeLink]" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}" target="_self">
+          <i class="sidenav-link-icon" [class]="data.icon"></i>
+          <span class="sidenav-link-text" *ngIf="collapsed">{{data.lable}}</span>
+        </a>
+    </ul>
+  </div>
+</div>
+  
+  
+
+
+

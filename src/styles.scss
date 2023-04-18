@@ -3,81 +3,153 @@
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
-@import 'app/styles/components/button.scss';
 @import 'app/styles/layout/header.scss';
+@import 'src/app/styles/layout/Variable.scss';
+
+/* Setting global styles for HTML and body elements. */
 
 html, 
-body { height: 100%; 
+body { 
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  object-fit: cover;
+  background: $background-color;
 }
 
-body { margin: 0;
-    background-color: white;
-}
-
-//h1 styling
-h1 {
-    color: rgb(113, 13, 207);
-}
-
-//form styling
+//form design
 form {
-    height: 600px;
-    width: 400px;
-    background-color: rgba(255,255,255,0.13);
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 50%;
-    border: 2px solid blueviolet;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 40px rgba(95, 84, 177, 0.6);
-    padding: 30px 15px;
-    font-family: ‘Poppins’,sans-serif;
-    color: blueviolet;
-    letter-spacing: 0.5px;
-    outline: none;
-    border: none;
+  border: 1px solid $primary-color;
+  padding: 15px; 
+  background-color: $tertiary-color;
+  border-radius: 5px;
+}
+
+#btn {
+  font-size: $font-size;
 }
 
 //lable styling
 label {
-    display: block;
-    font-size: 20px;
-    font-weight: 500;
+  font-size: $font-size;
+  color: $primary-color;
 }
 
-//input styling
-input {
-    display: block;
-    height: 30px;
-    width: 100%;
-    background-color: rgba(182, 185, 246, 0.07);
-    border-radius: 3px;
-    padding: 0 10px;
-    font-size: 14px;
-    font-weight: 300;
-    border: 2px solid rgb(202, 167, 234);
+//moving form 50px down from top of page
+.container {
+  padding-top: 80px;
 }
 
-//place holder styling
-::placeholder {
-    color: rgb(201, 165, 234);
+//icon style
+#btn-delete {
+  color: $red;
+  border: none;
+  background: none;
+  size: 12px;
 }
 
-//login class styling
-.login {
-    max-width: 200px;
-    margin-left: 20px;
-    text-align: center;
+#btn-edit {
+  color: $primary-color;
+  border: none;
+  background: none;
+  size: 12px
 }
 
-//h1 styling
-h1 {
-    text-align: center;
-    margin-top: 10px ;
+#btn-save, #btn-cancle, #btn-add {
+  font-size: $button-font;
+  width: 120px;
+}
+
+h4 {
+  color: $h4-color;
+}
+
+h5 {
+  color: $h5-color;
+}
+
+//heading style
+h2 {
+  color: $tertiary-color;
+  margin: 15px;
+}
+
+//table style
+.table {
+  border: 2px solid $primary-color;
+  background-color: $tertiary-color;
+}
+
+//list style
+.list {
+  height: 89vh;
+  overflow: auto;
+}
+
+.list-container {
+  overflow-x: auto;
+  margin: 10px;
+}
+
+#name, #email {
+  border: 1px solid $primary-color;
+  border-radius: 3px;
+  padding: 2px;
+}
+
+//form style
+.detail-form {
+  display: flex;
+  justify-content: center;
+  height: 89vh;
+  overflow: auto;
+}
+
+//alert box
+#alert {
+  border: 2px solid $primary-color;
+  border-radius: 5px;
+}
+
+//on small screen set padding
+@media (max-width: 576px) {
+  .detail-form {
+    padding: 20px;
+  }
 }
 
 
+//For screens smaller than 576px (extra small devices)
+@media (max-width: 300px) {
+  .form-group.col-md-4.col-md-offset-5.align-center {
+    max-width: 100%;
+  }
+}
 
+//For screens between 576px and 767.98px (small devices)
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .form-group.col-md-4.col-md-offset-5.align-center {
+    max-width: 80%;
+  }
+}
 
+//For screens between 768px and 991.98px (medium devices)
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .form-group.col-md-4.col-md-offset-5.align-center {
+    max-width: 60%;
+  }
+}
+
+//For screens between 992px and 1199.98px (large devices)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .form-group.col-md-4.col-md-offset-5.align-center {
+    max-width: 50%;
+  }
+}
+
+//For screens larger than 1200px (extra large devices)
+@media (min-width: 1200px) {
+  .form-group.col-md-4.col-md-offset-5.align-center {
+    max-width: 40%;
+  }
+}

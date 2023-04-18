@@ -1,1 +1,53 @@
-<p>group-list works!</p>
+<!-- This container holds the list of groups -->
+<div class="list">
+  <div class="list-container">
+    <div class="text-end m-2">
+      <button type="button" class="btn btn-light" id="btn-add" routerLink="/group/add-group">Add</button>
+    </div>
+    <h2>Group List</h2>
+    
+    <!-- This table displays the list of groups -->
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Members</th>
+          <th>Group balance</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <!--table body-->
+      <tbody>
+        <!-- Generate table rows dynamically from the groups data -->
+        <tr *ngFor="let group of groups">
+          <td>{{ group.name }}</td>
+          <td>{{ group.type }}</td>
+          <!--only name of group member will shown-->
+          <td>
+            <!-- Check if group.members exists and has a length greater than 0 -->
+            <ng-container *ngIf="group.members && group.members.length > 0; else noMembers">
+              <!-- Display the first member's name -->
+              {{ group.members[0].name }}
+              <!-- Loop through the remaining members and display their names with commas -->
+              <span *ngFor="let member of group.members.slice(1)">
+                , {{ member.name }}
+              </span>
+            </ng-container>
+            <!-- If group.members does not exist or has a length of 0, display "No members" -->
+            <ng-template #noMembers>
+              No members
+            </ng-template>
+          </td> 
+          <td>0</td>         
+          <td>
+            <!--button for add edit and delete-->
+            <button type="button" id="btn-edit" class="fa fa-dollar" (click)="onAddExpense()"></button>
+            <button type="button" id="btn-edit" class="fas fa-pen m-1" routerLink="/group/add-group"></button>
+            <button type="button" id="btn-delete" class="fa fa-trash m-1" (click)="onDelete(group)"></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>    
+</div>

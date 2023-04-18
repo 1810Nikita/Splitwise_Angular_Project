@@ -1,0 +1,23 @@
+@import 'src/app/styles/layout/variable.scss';
+
+//body styling
+.body {
+    width: calc(100% - 80px);
+    margin-left: 80px;
+    z-index: 0;
+    top: 0;
+    transition: all 0.5s ease;
+    background: $background-color;
+}
+
+//when the sidenav opnens completely
+.body-trimmed {
+    width: calc(100% - 265px);
+    margin-left: 265px;
+}
+
+//when sidenav icon is open
+.body-md-screen {
+    width: calc(100% - 80px);
+    margin-left: 80px;
+}

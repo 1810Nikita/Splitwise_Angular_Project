@@ -3,12 +3,8 @@ import { Component ,OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators , FormControl} from '@angular/forms';
 import { ActivatedRoute,Router } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { User } from 'src/app/model/loginRegister.model';
 
-// an interface that contains the properties of username and password.
-interface User {
-  username: string;
-  password: string;
-}
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -17,6 +13,8 @@ interface User {
 export class LoginComponent implements OnInit{
   loginForm!: FormGroup;
   signupUsers: User[];
+  alertSuccess: boolean | undefined;
+  alertReject: boolean | undefined;
 
   constructor(private router: Router) {
     this.signupUsers = [];
@@ -31,6 +29,9 @@ export class LoginComponent implements OnInit{
       username: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required)
     });
+
+    this.alertSuccess = false;
+    this. alertReject = false;
   }
 
   /**
@@ -44,10 +45,27 @@ export class LoginComponent implements OnInit{
     const password:string = this.loginForm.get('password')?.value;
     const isUserExist = this.signupUsers.find(m => m.username === username && m.password === password);
     if(isUserExist !== undefined) {
-      alert('user logged in successfully');
+      this.alertReject = true;
     } else{
-      alert('user not found please Register');
+      this.alertSuccess = true;
     }
+  }
+
+  /**
+   * this function works for closing the alert
+   * and after closing the alert it will redirect to the dashboard
+   */
+  closeAlertSuccess(): void {
+    this.alertSuccess = false;
+    this.router.navigate(['dashboard']);
+  }
+
+  /**
+   * this function will close the alert for wrong input
+   * and not redirect to any page.
+   */
+  closeAlertReject(): void {
+    this.alertReject = false;
   }
   
   /**

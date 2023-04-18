@@ -1,14 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators , FormControl} from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-
-// an interface that contains the properties of username ,name, confirm password and password.
-interface User {
-  username: string,
-  name: string,
-  password: string,
-  confirmPassword: string
-}
+import { Router } from '@angular/router';
+import { User } from 'src/app/model/loginRegister.model';
 
 @Component({
   selector: 'app-register',
@@ -26,9 +20,11 @@ export class RegisterComponent implements OnInit{
     confirmPassword:''
   }
 
-  constructor (){
+  alertSuccess: boolean | undefined;
+
+  constructor ( private router : Router){
     this.signupUsers =[];
-   }
+  }
   
   /**
     * Initializes the component with an empty registration form.
@@ -42,6 +38,8 @@ export class RegisterComponent implements OnInit{
       password: new FormControl(''),
       confirmPassword: new FormControl('')
     });
+
+    this.alertSuccess = false;
   }
   /**
    * Handles the 'Register' button click event.
@@ -69,6 +67,16 @@ export class RegisterComponent implements OnInit{
       password: '',
       confirmPassword:''
     }
-    alert('registered successfully')
-  }  
+    this.alertSuccess=true;
+    
+  }
+
+  /**
+   * this function works for closing the alert
+   * and after closing the alert it will redirect to the dashboard
+   */
+  closeAlertSuccess(): void {
+    this.alertSuccess = false;
+    this.router.navigateByUrl('/dashboard');
+  }
 }
